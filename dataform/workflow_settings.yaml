@@ -1,0 +1,15 @@
+# 
+# DATAFORM WORKFLOW SETTINGS — VELOJA E-COMMERCE (ARQUITETURA MEDALHÃO)
+# 
+# Política de Agendamento em Produção (Workflow Configuration no GCP):
+#   - Frequência: A cada 1 hora na janela comercial (das 06:00 às 20:00)
+#   - Expressão Cron: "0 6-20 * * *"
+#   - Fuso Horário (TimeZone): "America/Sao_Paulo"
+#   - Execuções por dia: 15 disparos (06h, 07h, ..., 20h) | Pausa noturna: 21h às 05h
+# 
+
+defaultProject: veloja-ecommerce-medalhao
+defaultLocation: southamerica-east1
+defaultDataset: refined
+defaultAssertionDataset: dataform_assertions
+dataformCoreVersion: 3.0.0

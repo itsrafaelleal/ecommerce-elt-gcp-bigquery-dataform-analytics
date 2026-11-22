@@ -1,0 +1,26 @@
+config {
+  type: "table",
+  schema: "refined",
+  name: "dim_produtos",
+  description: "Dimensão de produtos com chave substituta (SK), catálogo, categorização e cálculo de margem unitária",
+  tags: ["refined", "dimensao"],
+  assertions: {
+    uniqueKey: ["product_sk"],
+    nonNull: ["product_sk", "product_id", "sku", "preco_tabela", "custo_unitario", "margem_unitaria"]
+  }
+}
+
+SELECT
+  TO_HEX(MD5(product_id)) AS product_sk,
+  product_id,
+  sku,
+  nome_produto,
+  categoria,
+  subcategoria,
+  marca,
+  preco_tabela,
+  custo_unitario,
+  (preco_tabela - custo_unitario) AS margem_unitaria,
+  ativo,
+  CURRENT_TIMESTAMP() AS data_processamento
+FROM ${ref("trusted", "produtos")}

@@ -1,0 +1,62 @@
+config {
+  type: "table",
+  schema: "trusted",
+  name: "itens_pedido",
+  description: "Itens de pedidos padronizados, tipados e deduplicados",
+  tags: ["trusted"],
+  assertions: {
+    uniqueKey: ["order_item_id"],
+    nonNull: ["order_item_id", "order_id", "product_id", "quantidade", "preco_unitario"]
+  }
+}
+
+WITH limpeza_padronizacao AS (
+  SELECT
+    TRIM(order_item_id) AS order_item_id,
+    TRIM(order_id) AS order_id,
+    TRIM(product_id) AS product_id,
+    TRIM(quantidade) AS quantidade,
+    REGEXP_REPLACE(REPLACE(TRIM(preco_unitario), '\u00A0', ''), r'[^0-9,.]', '') AS preco_unitario,
+    REGEXP_REPLACE(REPLACE(TRIM(desconto_item), '\u00A0', ''), r'[^0-9,.]', '') AS desconto_item,
+    CASE 
+      WHEN status_item IS NULL OR TRIM(status_item) = '' OR UPPER(TRIM(status_item)) = 'NULL' THEN 'nao_informado'
+      ELSE LOWER(TRIM(status_item))
+    END AS status_item,
+    CURRENT_TIMESTAMP() AS data_processamento
+  FROM ${ref("raw", "itens_pedido")}
+),
+
+tipificacao AS (
+  SELECT
+    order_item_id,
+    order_id,
+    product_id,
+    SAFE_CAST(quantidade AS INT64) AS quantidade,
+    SAFE_CAST(REPLACE(preco_unitario, ',', '.') AS NUMERIC) AS preco_unitario,
+    COALESCE(SAFE_CAST(REPLACE(desconto_item, ',', '.') AS NUMERIC), 0.00) AS desconto_item,
+    status_item,
+    data_processamento
+  FROM limpeza_padronizacao
+),
+
+deduplicacao AS (
+  SELECT
+    *,
+    ROW_NUMBER() OVER (
+      PARTITION BY order_item_id
+      ORDER BY status_item DESC NULLS LAST
+    ) AS rnk
+  FROM tipificacao
+)
+
+SELECT
+  order_item_id,
+  order_id,
+  product_id,
+  quantidade,
+  preco_unitario,
+  desconto_item,
+  status_item,
+  data_processamento
+FROM deduplicacao
+WHERE rnk = 1

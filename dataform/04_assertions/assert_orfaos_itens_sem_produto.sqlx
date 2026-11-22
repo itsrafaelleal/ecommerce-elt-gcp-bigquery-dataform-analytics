@@ -1,0 +1,15 @@
+config {
+  type: "assertion",
+  name: "assert_orfaos_itens_sem_produto",
+  description: "Falha se existir algum item válido em fact_itens_pedido cujo product_id não exista em dim_produtos",
+  tags: ["data_quality", "integridade_referencial"]
+}
+
+SELECT
+  i.order_item_id,
+  i.product_id
+FROM ${ref("refined", "fact_itens_pedido")} i
+LEFT JOIN ${ref("refined", "dim_produtos")} pr
+  ON i.product_id = pr.product_id
+WHERE i.flag_item_valido = TRUE
+  AND pr.product_id IS NULL

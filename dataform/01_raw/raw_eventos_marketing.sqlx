@@ -1,0 +1,7 @@
+config {
+  type: "declaration",
+  database: "veloja-ecommerce-medalhao",
+  schema: "raw",
+  name: "eventos_marketing",
+  description: "Tabela externa RAW de eventos de marketing (CSV no Google Cloud Storage)"
+}

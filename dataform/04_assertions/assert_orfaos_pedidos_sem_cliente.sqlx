@@ -1,0 +1,15 @@
+config {
+  type: "assertion",
+  name: "assert_orfaos_pedidos_sem_cliente",
+  description: "Falha se existir algum pedido válido em fact_pedidos cujo customer_id não exista em dim_clientes",
+  tags: ["data_quality", "integridade_referencial"]
+}
+
+SELECT
+  p.order_id,
+  p.customer_id
+FROM ${ref("refined", "fact_pedidos")} p
+LEFT JOIN ${ref("refined", "dim_clientes")} c
+  ON p.customer_id = c.customer_id
+WHERE p.flag_pedido_valido = TRUE
+  AND c.customer_id IS NULL

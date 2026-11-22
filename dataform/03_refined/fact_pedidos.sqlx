@@ -1,0 +1,72 @@
+config {
+  type: "table",
+  schema: "refined",
+  name: "fact_pedidos",
+  description: "Fato consolidada no nível de pedido, agregando valores brutos, descontos, receita líquida, pagamentos aprovados e flag de pedido válido",
+  tags: ["refined", "fato"],
+  assertions: {
+    uniqueKey: ["order_id"],
+    nonNull: ["order_id", "customer_id", "data_pedido_date", "valor_receita_liquida", "flag_pedido_valido"],
+    rowConditions: [
+      "ABS(valor_receita_liquida - (valor_itens_bruto - valor_desconto)) <= 0.01",
+      "NOT (flag_pedido_valido = TRUE AND (status_pedido IN ('cancelado', 'devolvido', 'falha_pagamento') OR valor_pago_aprovado <= 0))"
+    ]
+  }
+}
+
+WITH pedidos AS (
+  SELECT
+    order_id,
+    customer_id,
+    data_pedido,
+    DATE(data_pedido) AS data_pedido_date,
+    status_pedido,
+    origem_pedido,
+    cupom,
+    frete
+  FROM ${ref("trusted", "pedidos")}
+),
+
+itens_agregados AS (
+  SELECT
+    order_id,
+    SUM(quantidade * preco_unitario) AS valor_itens_bruto,
+    SUM(desconto_item) AS valor_desconto,
+    SUM((quantidade * preco_unitario) - desconto_item) AS valor_receita_liquida
+  FROM ${ref("trusted", "itens_pedido")}
+  GROUP BY order_id
+),
+
+pagamentos_agregados AS (
+  SELECT
+    order_id,
+    SUM(CASE WHEN status_pagamento = 'aprovado' THEN valor_pago ELSE 0 END) AS valor_pago_aprovado
+  FROM ${ref("trusted", "pagamentos")}
+  GROUP BY order_id
+)
+
+SELECT
+  p.order_id,
+  p.customer_id,
+  p.data_pedido,
+  p.data_pedido_date,
+  p.status_pedido,
+  p.origem_pedido,
+  p.cupom,
+  p.frete,
+  COALESCE(i.valor_itens_bruto, 0.00) AS valor_itens_bruto,
+  COALESCE(i.valor_desconto, 0.00) AS valor_desconto,
+  COALESCE(i.valor_receita_liquida, 0.00) AS valor_receita_liquida,
+  COALESCE(pg.valor_pago_aprovado, 0.00) AS valor_pago_aprovado,
+  CASE
+    WHEN p.status_pedido NOT IN ('cancelado', 'devolvido', 'falha_pagamento')
+     AND COALESCE(pg.valor_pago_aprovado, 0.00) > 0
+    THEN TRUE
+    ELSE FALSE
+  END AS flag_pedido_valido,
+  CURRENT_TIMESTAMP() AS data_processamento
+FROM pedidos p
+LEFT JOIN itens_agregados i
+  ON p.order_id = i.order_id
+LEFT JOIN pagamentos_agregados pg
+  ON p.order_id = pg.order_id

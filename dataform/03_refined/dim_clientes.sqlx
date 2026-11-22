@@ -1,0 +1,43 @@
+config {
+  type: "table",
+  schema: "refined",
+  name: "dim_clientes",
+  description: "Dimensão de clientes com chave substituta (SK) e segmentação analítica por faixas de idade e renda",
+  tags: ["refined", "dimensao"],
+  assertions: {
+    uniqueKey: ["customer_sk"],
+    nonNull: ["customer_sk", "customer_id", "faixa_idade", "faixa_renda"],
+    rowConditions: [
+      "faixa_idade IN ('18-24', '25-34', '35-49', '50-64', '65+', 'nao_informado')",
+      "faixa_renda IN ('Ate R$ 3.000', 'R$ 3.001 a R$ 7.000', 'R$ 7.001 a R$ 12.000', 'Acima de R$ 12.000', 'nao_informado')"
+    ]
+  }
+}
+
+SELECT
+  TO_HEX(MD5(customer_id)) AS customer_sk, 
+  customer_id,
+  nome,
+  email,
+  cidade,
+  estado,
+  canal_aquisicao,
+  data_cadastro,
+  CASE 
+    WHEN idade BETWEEN 18 AND 24 THEN '18-24'
+    WHEN idade BETWEEN 25 AND 34 THEN '25-34'
+    WHEN idade BETWEEN 35 AND 49 THEN '35-49'
+    WHEN idade BETWEEN 50 AND 64 THEN '50-64'
+    WHEN idade >= 65 THEN '65+'
+    ELSE 'nao_informado'
+  END AS faixa_idade,
+  CASE 
+    WHEN renda_estimada <= 3000 THEN 'Ate R$ 3.000'
+    WHEN renda_estimada <= 7000 THEN 'R$ 3.001 a R$ 7.000'
+    WHEN renda_estimada <= 12000 THEN 'R$ 7.001 a R$ 12.000'
+    WHEN renda_estimada > 12000 THEN 'Acima de R$ 12.000'
+    ELSE 'nao_informado'
+  END AS faixa_renda,
+  ativo,
+  CURRENT_TIMESTAMP() AS data_processamento
+FROM ${ref("trusted", "clientes")}
