@@ -1,0 +1,26 @@
+-- CAMADA TRUSTED — METAS_ORCAMENTO
+-- TABELA: metas_orcamento
+-- DESCRIÇÃO: Tipagem e padronização das metas mensais de orçamento Top-Down (FP&A) para 2025
+
+CREATE OR REPLACE TABLE `veloja-ecommerce-medalhao.trusted.metas_orcamento` AS
+WITH limpeza AS (
+  SELECT
+    TRIM(meta_id) AS meta_id,
+    TRIM(ano_mes) AS ano_mes,
+    SAFE.PARSE_DATE('%Y-%m', TRIM(ano_mes)) AS data_mes,
+    SAFE_CAST(REPLACE(TRIM(meta_receita_liquida), ',', '.') AS NUMERIC) AS meta_receita_liquida,
+    SAFE_CAST(TRIM(meta_pedidos) AS INT64) AS meta_pedidos,
+    SAFE_CAST(REPLACE(TRIM(meta_ticket_medio), ',', '.') AS NUMERIC) AS meta_ticket_medio,
+    SAFE_CAST(REPLACE(TRIM(meta_margem_pct), ',', '.') AS NUMERIC) AS meta_margem_pct,
+    SAFE_CAST(REPLACE(TRIM(teto_desconto_pct), ',', '.') AS NUMERIC) AS teto_desconto_pct,
+    SAFE_CAST(REPLACE(TRIM(meta_roas), ',', '.') AS NUMERIC) AS meta_roas,
+    SAFE_CAST(REPLACE(TRIM(limiar_verde_pct), ',', '.') AS NUMERIC) AS limiar_verde_pct,
+    SAFE_CAST(REPLACE(TRIM(limiar_amarelo_pct), ',', '.') AS NUMERIC) AS limiar_amarelo_pct,
+    TRIM(origem_meta) AS origem_meta,
+    CURRENT_TIMESTAMP() AS data_processamento
+  FROM `veloja-ecommerce-medalhao.raw.metas_orcamento`
+)
+SELECT *
+FROM limpeza
+WHERE meta_id IS NOT NULL
+ORDER BY ano_mes;
