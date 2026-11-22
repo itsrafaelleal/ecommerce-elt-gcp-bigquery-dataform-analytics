@@ -1,0 +1,501 @@
+product_id,sku,nome_produto,categoria,subcategoria,marca,preco_tabela,custo_unitario,ativo,data_inicio_venda,peso_kg
+P0001,SKU-ELE-0001,Nexa Audio 1,Eletronicos,Audio,Vitta,850.82,618.66,TRUE,11/12/2024,0.768
+P0002,SKU-MOD-0002,Vitta Bolsas 2,Moda,Bolsas,Bolt,"R$ 703,88","R$ 313,37",1,2025/05/14,1.337
+P0003,SKU-BEL-0003,Lume Cabelo 3,Beleza,Cabelo,Zenit, 270.44 ,175.94,true,2025/10/28,"9,338"
+P0004,SKU-CAS-0004,Koru Decoracao 4,Casa,Decoracao,Vitta,"760,45","R$ 480,44",true,2026-02-22,2.063
+P0005,SKU-BEL-0005,Nexa Skincare 5,Beleza,Skincare,Koru,"96,86", 76.51 ,nao,25/10/2024, 6.031 
+P0006,SKU-CAS-0006,Bolt Organizacao 6,Casa,Organizacao,Lume,358.25,"R$ 199,80",S,25/09/2025,6.004
+P0007,SKU-ESP-0007,Bolt Outdoor 7,Esporte,Outdoor,Zenit,55.64,39.92,true,21/08/2026, 0.821 
+P0008,SKU-ELE-0008,Nimbus Audio 8,Eletronicos,Audio,Koru,717.05,289.55,true,2026-09-24,"1,968"
+P0009,SKU-ELE-0009,Nimbus Casa inteligente 9,Eletronicos,Casa inteligente,Aurora,213.58,"127,82",true,2025/02/18,"R$ 1,396"
+P0010,SKU-CAS-0010,Zenit Organizacao 10,Casa,Organizacao,Nexa,"R$ 481,11","321,21",TRUE,2024-07-22, 4.489 
+P0011,SKU-MOD-0011,Nimbus Camisetas 11,Moda,Camisetas,Vitta,"708,55", 527.71 ,sim,17/03/2024,5.826
+P0012,SKU-ELE-0012,Vitta Audio 12,Eletronicos,Audio,Bolt,"623,93",322.82,sim,2026-04-04T19:07:56,"R$ 0,255"
+P0013,SKU-BEL-0013,Vitta Skincare 13,Beleza,Skincare,Aurora,"870,07",694.95,1,22/08/2024,"4,614"
+P0014,SKU-ESP-0014,Aurora Outdoor 14,Esporte,Outdoor,Zenit,"347,98",224.52,N,04/05/2026, 8.327 
+P0015,SKU-BEL-0015,Bolt Skincare 15,Beleza,Skincare,Nimbus,899.47,706.99,false,12/07/2026,"R$ 8,898"
+P0016,SKU-MOD-0016,Zenit Bolsas 16,Moda,Bolsas,Nimbus,"129,51", 77.75 ,TRUE,2024-10-24T19:07:56, 4.608 
+P0017,SKU-CAS-0017,Nimbus Organizacao 17,Casa,Organizacao,Nexa,"R$ 384,33","R$ 166,31",1,2024-11-29, 4.477 
+P0018,SKU-ELE-0018,Nimbus Audio 18,Eletronicos,Audio,Aurora,"R$ 347,10","234,91",TRUE,2025-09-16T19:07:56, 8.815 
+P0019,SKU-ELE-0019,Nimbus Casa inteligente 19,Eletronicos,Casa inteligente,Aurora,"436,08","R$ 339,81",sim,2024-04-12,"R$ 9,903"
+P0020,SKU-CAS-0020,Bolt Cozinha 20,Casa,Cozinha,Aurora,"48,26","R$ 25,97",FALSE,2024-12-14T19:07:56,"R$ 7,614"
+P0021,SKU-BEL-0021,Nimbus Cabelo 21,Beleza,Cabelo,Bolt,530.62,"376,65",1,2026-02-19T19:07:56,"6,379"
+P0022,SKU-ESP-0022,Nexa Outdoor 22,Esporte,Outdoor,Aurora,307.73, 242.73 ,1,2025-05-05T19:07:56, 9.013 
+P0023,SKU-ESP-0023,Aurora Fitness 23,Esporte,Fitness,Zenit,83.20,48.40,sim,05/09/2024, 3.239 
+P0024,SKU-BEL-0024,Bolt Skincare 24,Beleza,Skincare,Bolt,523.59,273.92,TRUE,2024-11-11T19:07:56,8.853
+P0025,SKU-ESP-0025,Nimbus Fitness 25,Esporte,Fitness,Zenit,92.44,"55,65",1,04/03/2024,8.349
+P0026,SKU-CAS-0026,Bolt Organizacao 26,Casa,Organizacao,Koru,"171,33","120,54",sim,07/05/2025,"2,569"
+P0027,SKU-MOD-0027,Koru Camisetas 27,Moda,Camisetas,Bolt,481.28,295.35,S,2026-08-22,2.081
+P0028,SKU-CAS-0028,Nexa Organizacao 28,Casa,Organizacao,Koru,837.32,"338,47",sim,2025-05-16,"9,696"
+P0029,SKU-MOD-0029,Bolt Camisetas 29,Moda,Camisetas,Koru,624.81,383.98,1,2025-11-21,"0,411"
+P0030,SKU-CAS-0030,Aurora Cozinha 30,Casa,Cozinha,Bolt,436.30,"285,18",TRUE,2025-01-21,"R$ 4,191"
+P0031,SKU-ESP-0031,Lume Suplementos Esportivos 31,Esporte,Suplementos Esportivos,Aurora,616.45,281.20,S,31/05/2024,1.833
+P0032,SKU-MOD-0032,Zenit Bolsas 32,Moda,Bolsas,Nimbus,"116,83","R$ 72,29",S,2024/04/04,"6,829"
+P0033,SKU-ESP-0033,Lume Fitness 33,Esporte,Fitness,Nexa,"489,71",300.30,TRUE,2024/04/21,6.971
+P0034,SKU-MOD-0034,Zenit Bolsas 34,Moda,Bolsas,Zenit,609.99,"R$ 294,62",1,2024/12/28,8.443
+P0035,SKU-BEL-0035,Bolt Skincare 35,Beleza,Skincare,Zenit,883.85,"521,98",1,2025-06-24,9.691
+P0036,SKU-ELE-0036,Lume Casa inteligente 36,Eletronicos,Casa inteligente,Vitta, 498.24 ,"370,73",1,2024-04-01,4.206
+P0037,SKU-ELE-0037,Nimbus Audio 37,Eletronicos,Audio,Koru,"735,18","336,42",1,26/07/2024,"9,348"
+P0038,SKU-BEL-0038,Koru Cabelo 38,Beleza,Cabelo,Zenit,"859,03", 597.15 ,sim,2025-04-30T19:07:56,"4,423"
+P0039,SKU-ESP-0039,Zenit Fitness 39,Esporte,Fitness,Zenit,"509,91","353,54",sim,2025/01/06,"6,602"
+P0040,SKU-CAS-0040,Vitta Organizacao 40,Casa,Organizacao,Lume,"463,94",354.36,sim,2025-07-12T19:07:56,"R$ 3,117"
+P0041,SKU-ELE-0041,Lume Audio 41,Eletronicos,Audio,Nexa,50.43,33.27,sim,2025/02/14,"R$ 5,501"
+P0042,SKU-ELE-0042,Lume Audio 42,Eletronicos,Audio,Koru,"R$ 471,82", 340.25 ,S,2025-05-16T19:07:56, 0.283 
+P0043,SKU-BEL-0043,Koru Cabelo 43,Beleza,Cabelo,Nimbus, 58.77 ,32.99,N,2024/12/01,"1,480"
+P0044,SKU-CAS-0044,Zenit Organizacao 44,Casa,Organizacao,Vitta,689.54,348.57,false,2024/10/23,"3,603"
+P0045,SKU-BEL-0045,Nexa Cabelo 45,Beleza,Cabelo,Koru,374.98,185.30,TRUE,2026/05/19,"R$ 6,551"
+P0046,SKU-BEL-0046,Aurora Cabelo 46,Beleza,Cabelo,Nimbus,216.87,158.92,TRUE,2026-08-13T19:07:56,6.805
+P0047,SKU-CAS-0047,Nimbus Organizacao 47,Casa,Organizacao,Lume,81.10, 51.17 ,sim,2025-01-03T19:07:56,"4,891"
+P0048,SKU-MOD-0048,Lume Calcados 48,Moda,Calcados,Nimbus,"380,61",191.07,sim,2024-07-23T19:07:56,"5,766"
+P0049,SKU-BEL-0049,Aurora Skincare 49,Beleza,Skincare,Bolt,"544,03",256.75,1,25/08/2026,"6,673"
+P0050,SKU-CAS-0050,Aurora Cozinha 50,Casa,Cozinha,Lume,"193,82","132,91",TRUE,18/08/2024, 5.027 
+P0051,SKU-ELE-0051,Bolt Audio 51,Eletronicos,Audio,Nexa,"649,62",435.91,true,23/07/2025,"0,769"
+P0052,SKU-CAS-0052,Nimbus Organizacao 52,Casa,Organizacao,Nimbus,116.21,"57,59",true,2024-07-13T19:07:56,1.838
+P0053,SKU-ELE-0053,Zenit Audio 53,Eletronicos,Audio,Bolt,"818,76",607.00,1,14/04/2024,"8,743"
+P0054,SKU-ESP-0054,Vitta Suplementos Esportivos 54,Esporte,Suplementos Esportivos,Nimbus, 712.53 ,342.78,1,2026-05-11T19:07:56,"R$ 3,854"
+P0055,SKU-CAS-0055,Lume Decoracao 55,Casa,Decoracao,Bolt,317.95, 232.08 ,TRUE,2026-06-29T19:07:56,9.627
+P0056,SKU-CAS-0056,Koru Organizacao 56,Casa,Organizacao,Lume,521.18,"283,49",true,05/01/2025,9.560
+P0057,SKU-ESP-0057,Zenit Outdoor 57,Esporte,Outdoor,Nimbus,535.99,311.01,S,24/08/2026, 4.638 
+P0058,SKU-CAS-0058,Aurora Decoracao 58,Casa,Decoracao,Nimbus,"721,46", 303.68 ,1,2026-10-16,"4,578"
+P0059,SKU-ESP-0059,Vitta Suplementos Esportivos 59,Esporte,Suplementos Esportivos,Aurora,"668,07",495.93,sim,2025-09-15T19:07:56, 3.858 
+P0060,SKU-ESP-0060,Koru Suplementos Esportivos 60,Esporte,Suplementos Esportivos,Lume,383.47, 279.54 ,S,20/02/2025,1.509
+P0061,SKU-BEL-0061,Vitta Skincare 61,Beleza,Skincare,Vitta,46.47,"21,62",false,2026/10/06,1.967
+P0062,SKU-ELE-0062,Aurora Audio 62,Eletronicos,Audio,Nexa,852.17,448.27,true,2025-10-01,0.342
+P0063,SKU-BEL-0063,Koru Cabelo 63,Beleza,Cabelo,Zenit,"448,97","R$ 192,61",sim,2025-11-27,"5,515"
+P0064,SKU-CAS-0064,Lume Organizacao 64,Casa,Organizacao,Aurora,"584,08", 467.24 ,1,2025-08-05T19:07:56,"R$ 3,467"
+P0065,SKU-ESP-0065,Zenit Fitness 65,Esporte,Fitness,Bolt,769.78,"433,10",S,2025/05/17,1.180
+P0066,SKU-MOD-0066,Vitta Camisetas 66,Moda,Camisetas,Aurora,677.81,433.75,TRUE,20/03/2024,"R$ 8,380"
+P0067,SKU-ESP-0067,Aurora Suplementos Esportivos 67,Esporte,Suplementos Esportivos,Nexa,329.44,"233,45",true,13/08/2025,"6,013"
+P0068,SKU-BEL-0068,Koru Cabelo 68,Beleza,Cabelo,Lume,582.09,"424,44",FALSE,2025/06/14,"R$ 1,763"
+P0069,SKU-MOD-0069,Lume Bolsas 69,Moda,Bolsas,Vitta, 221.07 ,"126,52",1,19/09/2025,"1,428"
+P0070,SKU-BEL-0070,Vitta Cabelo 70,Beleza,Cabelo,Zenit,763.81,"R$ 363,66",true,07/06/2024,"3,395"
+P0071,SKU-ELE-0071,Nimbus Audio 71,Eletronicos,Audio,Zenit,374.20,206.42,S,2025-08-17T19:07:56, 6.008 
+P0072,SKU-BEL-0072,Aurora Cabelo 72,Beleza,Cabelo,Nexa,"171,42","90,83",1,2025-01-03,"8,354"
+P0073,SKU-ELE-0073,Nexa Audio 73,Eletronicos,Audio,Zenit, 232.01 ,98.95,TRUE,2025-04-28, 0.391 
+P0074,SKU-MOD-0074,Zenit Camisetas 74,Moda,Camisetas,Vitta,"782,73","R$ 445,61",nao,2026-06-02T19:07:56,"0,113"
+P0075,SKU-MOD-0075,Lume Bolsas 75,Moda,Bolsas,Koru,"188,21","R$ 126,70",sim,2026-01-31,"2,743"
+P0076,SKU-ESP-0076,Lume Outdoor 76,Esporte,Outdoor,Bolt, 844.03 ,"R$ 499,99",sim,01/08/2025,"5,856"
+P0077,SKU-CAS-0077,Nexa Cozinha 77,Casa,Cozinha,Nexa,261.98,142.06,1,2025-03-28,"3,031"
+P0078,SKU-ESP-0078,Nimbus Outdoor 78,Esporte,Outdoor,Koru,"857,63","670,57",sim,2024/08/19, 4.419 
+P0079,SKU-BEL-0079,Vitta Cabelo 79,Beleza,Cabelo,Bolt,615.10,342.09,0,2025-09-01,8.038
+P0080,SKU-ELE-0080,Nexa Casa inteligente 80,Eletronicos,Casa inteligente,Lume,"R$ 595,38","249,60",TRUE,17/03/2026,8.990
+P0081,SKU-BEL-0081,Nexa Cabelo 81,Beleza,Cabelo,Bolt,"R$ 811,99",619.83,1,2026/02/02,"2,783"
+P0082,SKU-BEL-0082,Bolt Cabelo 82,Beleza,Cabelo,Vitta,"477,15","R$ 272,26",TRUE,06/12/2024,"1,178"
+P0083,SKU-MOD-0083,Koru Calcados 83,Moda,Calcados,Lume,38.48,15.97,sim,2024-08-28T19:07:56, 8.240 
+P0084,SKU-MOD-0084,Bolt Calcados 84,Moda,Calcados,Nimbus,"360,00","R$ 149,49",sim,2024/08/05,"0,353"
+P0085,SKU-BEL-0085,Nimbus Cabelo 85,Beleza,Cabelo,Bolt,"239,55",98.94,nao,2025-12-25,4.006
+P0086,SKU-ESP-0086,Nexa Fitness 86,Esporte,Fitness,Nimbus,234.74,"153,92",S,2024-03-28T19:07:56,"7,031"
+P0087,SKU-MOD-0087,Bolt Bolsas 87,Moda,Bolsas,Nimbus,37.51, 29.58 ,S,2025-12-10, 4.287 
+P0088,SKU-ESP-0088,Nexa Outdoor 88,Esporte,Outdoor,Zenit, 75.62 ,"34,37",true,2024-10-04T19:07:56,3.950
+P0089,SKU-ESP-0089,Koru Suplementos Esportivos 89,Esporte,Suplementos Esportivos,Vitta,"R$ 334,20",171.62,1,2025-06-13T19:07:56,"1,407"
+P0090,SKU-BEL-0090,Nimbus Cabelo 90,Beleza,Cabelo,Vitta,123.55,56.85,sim,19/10/2026,5.276
+P0091,SKU-BEL-0091,Lume Skincare 91,Beleza,Skincare,Aurora,856.90,663.85,TRUE,04/07/2024,7.808
+P0092,SKU-ESP-0092,Lume Suplementos Esportivos 92,Esporte,Suplementos Esportivos,Vitta,"R$ 860,33",525.89,sim,18/10/2025,7.451
+P0093,SKU-MOD-0093,Nexa Camisetas 93,Moda,Camisetas,Zenit,"509,78","R$ 247,68",sim,2025-01-24,"R$ 6,655"
+P0094,SKU-ESP-0094,Aurora Fitness 94,Esporte,Fitness,Nimbus,"612,14","480,36",sim,2024-11-18T19:07:56,"R$ 9,195"
+P0095,SKU-CAS-0095,Zenit Organizacao 95,Casa,Organizacao,Zenit, 480.50 ,"271,10",1,2025-08-31T19:07:56,4.689
+P0096,SKU-MOD-0096,Zenit Camisetas 96,Moda,Camisetas,Zenit,"R$ 662,56",440.70,TRUE,2024-06-11,0.420
+P0097,SKU-CAS-0097,Zenit Decoracao 97,Casa,Decoracao,Bolt,"803,98",407.33,N,2024/07/03,2.528
+P0098,SKU-BEL-0098,Koru Cabelo 98,Beleza,Cabelo,Nexa,273.84,"137,86",S,2026/10/01,"0,996"
+P0099,SKU-CAS-0099,Nexa Decoracao 99,Casa,Decoracao,Zenit,"R$ 32,60", 25.99 ,true,2025/03/04,"9,281"
+P0100,SKU-CAS-0100,Nexa Organizacao 100,Casa,Organizacao,Bolt,852.89,"674,02",TRUE,16/02/2026,"0,589"
+P0101,SKU-ELE-0101,Nexa Casa inteligente 101,Eletronicos,Casa inteligente,Bolt,"R$ 575,29",366.48,false,2024-07-15,"R$ 5,248"
+P0102,SKU-MOD-0102,Nimbus Bolsas 102,Moda,Bolsas,Nimbus,"396,42",287.57,1,14/01/2026, 8.775 
+P0103,SKU-ELE-0103,Bolt Audio 103,Eletronicos,Audio,Lume,"R$ 619,17", 370.33 ,S,30/10/2025,"R$ 7,708"
+P0104,SKU-CAS-0104,Aurora Decoracao 104,Casa,Decoracao,Bolt,"513,02","337,46",TRUE,14/01/2025,"R$ 1,884"
+P0105,SKU-ELE-0105,Nimbus Casa inteligente 105,Eletronicos,Casa inteligente,Zenit,"878,71",372.67,true,2024-05-14, 8.875 
+P0106,SKU-ESP-0106,Aurora Outdoor 106,Esporte,Outdoor,Vitta,"615,77",491.59,true,20/08/2024,"2,937"
+P0107,SKU-MOD-0107,Lume Bolsas 107,Moda,Bolsas,Nimbus,"555,60",376.83,1,08/02/2026,"3,432"
+P0108,SKU-CAS-0108,Vitta Organizacao 108,Casa,Organizacao,Bolt,"R$ 414,82",261.72,TRUE,05/07/2026,7.840
+P0109,SKU-ELE-0109,Koru Audio 109,Eletronicos,Audio,Vitta,466.80,"289,12",N,2024/07/07,"7,311"
+P0110,SKU-CAS-0110,Aurora Organizacao 110,Casa,Organizacao,Zenit,"R$ 356,71",267.30,S,12/08/2024,1.821
+P0111,SKU-CAS-0111,Nexa Organizacao 111,Casa,Organizacao,Koru,198.29,134.86,1,2024-12-14,2.443
+P0112,SKU-BEL-0112,Nimbus Skincare 112,Beleza,Skincare,Koru,577.53,236.70,false,18/09/2024, 9.250 
+P0113,SKU-BEL-0113,Nexa Skincare 113,Beleza,Skincare,Nexa,"681,27",528.15,S,2025-03-19T19:07:56,"5,238"
+P0114,SKU-ESP-0114,Nexa Fitness 114,Esporte,Fitness,Aurora, 91.96 ,"56,96",TRUE,2025/06/21,"8,868"
+P0115,SKU-CAS-0115,Bolt Decoracao 115,Casa,Decoracao,Bolt,"278,42",181.38,S,08/08/2026,"R$ 0,211"
+P0116,SKU-CAS-0116,Lume Cozinha 116,Casa,Cozinha,Aurora,"309,53",159.38,1,2024/05/29,7.865
+P0117,SKU-ESP-0117,Nexa Fitness 117,Esporte,Fitness,Nimbus,530.17, 344.61 ,S,2025/09/05,"1,363"
+P0118,SKU-MOD-0118,Bolt Bolsas 118,Moda,Bolsas,Aurora,806.27, 546.22 ,true,04/09/2025,"R$ 1,882"
+P0119,SKU-ESP-0119,Lume Outdoor 119,Esporte,Outdoor,Bolt,"R$ 139,97","62,07",false,2025-07-27T19:07:56,7.483
+P0120,SKU-ESP-0120,Aurora Outdoor 120,Esporte,Outdoor,Koru,786.56,"480,50",sim,2024/10/13,2.047
+P0121,SKU-BEL-0121,Zenit Cabelo 121,Beleza,Cabelo,Nimbus,609.52,345.60,S,2025-11-07T19:07:56, 7.722 
+P0122,SKU-BEL-0122,Aurora Cabelo 122,Beleza,Cabelo,Bolt,527.40,"R$ 247,63",S,2026-08-05,3.840
+P0123,SKU-CAS-0123,Nimbus Decoracao 123,Casa,Decoracao,Zenit,749.42,"566,89",1,2025/08/04,3.132
+P0124,SKU-ELE-0124,Zenit Audio 124,Eletronicos,Audio,Aurora,444.80,"245,21",0,2024-04-14,7.516
+P0125,SKU-MOD-0125,Zenit Calcados 125,Moda,Calcados,Nimbus,"R$ 202,29",87.07,1,14/09/2025,"4,807"
+P0126,SKU-MOD-0126,Lume Bolsas 126,Moda,Bolsas,Vitta,"R$ 580,49", 358.11 ,TRUE,2025/01/19,9.196
+P0127,SKU-CAS-0127,Nimbus Decoracao 127,Casa,Decoracao,Nexa,"325,62","137,73",TRUE,20/06/2024,"R$ 9,655"
+P0128,SKU-MOD-0128,Lume Calcados 128,Moda,Calcados,Nimbus, 359.66 ,192.65,1,2024-07-08T19:07:56,7.407
+P0129,SKU-ESP-0129,Nimbus Outdoor 129,Esporte,Outdoor,Bolt,"R$ 281,27",213.99,true,29/07/2025,"1,201"
+P0130,SKU-MOD-0130,Zenit Camisetas 130,Moda,Camisetas,Vitta,637.40,347.95,TRUE,2026-07-12,7.560
+P0131,SKU-ESP-0131,Zenit Fitness 131,Esporte,Fitness,Bolt,369.76,"R$ 292,19",1,2025-08-07T19:07:56,"1,269"
+P0132,SKU-ELE-0132,Koru Casa inteligente 132,Eletronicos,Casa inteligente,Nexa,"R$ 358,89",181.59,S,2024-08-18,5.571
+P0133,SKU-ELE-0133,Aurora Casa inteligente 133,Eletronicos,Casa inteligente,Koru,"739,29","387,62",false,2025/02/26,"R$ 4,074"
+P0134,SKU-BEL-0134,Nimbus Cabelo 134,Beleza,Cabelo,Koru,"R$ 723,67", 290.49 ,N,2026/08/04,5.230
+P0135,SKU-ESP-0135,Vitta Fitness 135,Esporte,Fitness,Vitta,274.60,"119,26",S,2025-06-08T19:07:56,1.332
+P0136,SKU-MOD-0136,Nexa Bolsas 136,Moda,Bolsas,Nexa, 376.08 ,163.87,S,2024/10/29,"R$ 2,544"
+P0137,SKU-MOD-0137,Nimbus Bolsas 137,Moda,Bolsas,Zenit,"501,92",307.27,TRUE,19/08/2025,5.221
+P0138,SKU-BEL-0138,Nimbus Skincare 138,Beleza,Skincare,Nexa,"296,76","R$ 232,73",1,10/09/2025,2.549
+P0139,SKU-ESP-0139,Zenit Suplementos Esportivos 139,Esporte,Suplementos Esportivos,Aurora,"R$ 141,73","62,72",true,2025/08/11,"3,965"
+P0140,SKU-CAS-0140,Bolt Organizacao 140,Casa,Organizacao,Zenit,815.35,347.73,true,2024/03/26,4.316
+P0141,SKU-CAS-0141,Aurora Decoracao 141,Casa,Decoracao,Nexa,112.02, 65.92 ,TRUE,2026-01-02T19:07:56,"0,276"
+P0142,SKU-MOD-0142,Zenit Camisetas 142,Moda,Camisetas,Lume,145.95,60.34,1,2025-11-09T19:07:56,"4,598"
+P0143,SKU-CAS-0143,Zenit Organizacao 143,Casa,Organizacao,Nexa,"337,77","R$ 253,97",1,17/05/2024,6.664
+P0144,SKU-BEL-0144,Lume Skincare 144,Beleza,Skincare,Vitta,236.51,122.75,1,2025-12-04,"R$ 7,174"
+P0145,SKU-BEL-0145,Vitta Cabelo 145,Beleza,Cabelo,Lume,"394,18","233,97",TRUE,2025-12-17T19:07:56,"6,968"
+P0146,SKU-ESP-0146,Koru Fitness 146,Esporte,Fitness,Bolt,541.08,"220,41",N,2024-09-02T19:07:56,6.802
+P0147,SKU-BEL-0147,Vitta Cabelo 147,Beleza,Cabelo,Koru,"512,28",296.90,S,03/04/2026, 3.560 
+P0148,SKU-MOD-0148,Bolt Camisetas 148,Moda,Camisetas,Aurora,826.16,"457,71",1,2024-11-16T19:07:56,8.865
+P0149,SKU-MOD-0149,Nexa Calcados 149,Moda,Calcados,Lume,414.28, 310.94 ,1,09/05/2024,"7,180"
+P0150,SKU-BEL-0150,Lume Skincare 150,Beleza,Skincare,Vitta,"130,38","56,49",S,2026/09/30,9.487
+P0151,SKU-ELE-0151,Nexa Audio 151,Eletronicos,Audio,Bolt,581.22,"283,93",1,2026-07-22T19:07:56, 7.098 
+P0152,SKU-BEL-0152,Nexa Cabelo 152,Beleza,Cabelo,Koru,"R$ 896,89","599,93",sim,18/06/2024,0.889
+P0153,SKU-BEL-0153,Lume Cabelo 153,Beleza,Cabelo,Zenit,516.47,322.08,S,17/11/2024,6.553
+P0154,SKU-BEL-0154,Nimbus Cabelo 154,Beleza,Cabelo,Nimbus,47.82,27.64,true,2026/10/17, 2.864 
+P0155,SKU-CAS-0155,Nexa Decoracao 155,Casa,Decoracao,Koru,838.54,354.82,true,2026/02/13,8.620
+P0156,SKU-CAS-0156,Zenit Decoracao 156,Casa,Decoracao,Bolt,"492,96",276.65,S,2025/04/16,"5,165"
+P0157,SKU-ELE-0157,Nimbus Casa inteligente 157,Eletronicos,Casa inteligente,Zenit,66.92,"28,40",1,15/04/2026, 2.061 
+P0158,SKU-MOD-0158,Vitta Camisetas 158,Moda,Camisetas,Aurora,59.95,32.21,true,22/07/2026,5.224
+P0159,SKU-MOD-0159,Vitta Camisetas 159,Moda,Camisetas,Vitta,"438,01", 233.59 ,1,2024-06-26,0.458
+P0160,SKU-ESP-0160,Nexa Fitness 160,Esporte,Fitness,Zenit,"402,58",307.69,true,2025/03/31, 6.127 
+P0161,SKU-MOD-0161,Zenit Calcados 161,Moda,Calcados,Bolt,"114,57","89,54",true,2026-03-19T19:07:56, 9.504 
+P0162,SKU-MOD-0162,Aurora Bolsas 162,Moda,Bolsas,Nimbus,"R$ 243,47","115,74",sim,2025-06-22,"8,270"
+P0163,SKU-CAS-0163,Bolt Organizacao 163,Casa,Organizacao,Nimbus,"872,67", 565.58 ,TRUE,2024-04-07,1.520
+P0164,SKU-CAS-0164,Koru Cozinha 164,Casa,Cozinha,Koru,377.46,"262,85",TRUE,15/08/2025,4.401
+P0165,SKU-ESP-0165,Lume Fitness 165,Esporte,Fitness,Aurora,"R$ 496,37","R$ 353,52",true,20/07/2025,"R$ 4,914"
+P0166,SKU-CAS-0166,Lume Organizacao 166,Casa,Organizacao,Koru, 152.38 ,84.16,S,2025-12-04T19:07:56,9.528
+P0167,SKU-BEL-0167,Lume Cabelo 167,Beleza,Cabelo,Zenit,"R$ 366,80","236,90",TRUE,2024/05/15,0.978
+P0168,SKU-ESP-0168,Vitta Suplementos Esportivos 168,Esporte,Suplementos Esportivos,Lume,"R$ 691,34","R$ 278,46",true,09/06/2024, 7.974 
+P0169,SKU-MOD-0169,Nexa Bolsas 169,Moda,Bolsas,Zenit,"R$ 142,09","R$ 71,18",sim,2025/04/19,"7,913"
+P0170,SKU-CAS-0170,Koru Cozinha 170,Casa,Cozinha,Vitta,"760,93",605.66,sim,23/02/2025, 8.052 
+P0171,SKU-MOD-0171,Bolt Calcados 171,Moda,Calcados,Nimbus, 793.78 ,"449,37",TRUE,2025-08-18,1.085
+P0172,SKU-BEL-0172,Zenit Skincare 172,Beleza,Skincare,Nimbus,212.15,"R$ 157,33",sim,2026-01-22,8.942
+P0173,SKU-MOD-0173,Bolt Bolsas 173,Moda,Bolsas,Vitta,791.14,"416,62",S,2025-01-29T19:07:56,"R$ 3,105"
+P0174,SKU-BEL-0174,Zenit Skincare 174,Beleza,Skincare,Bolt,"307,77","183,88",TRUE,2025-04-19T19:07:56,5.506
+P0175,SKU-MOD-0175,Vitta Camisetas 175,Moda,Camisetas,Zenit, 350.70 ,173.10,false,2024-03-21, 7.394 
+P0176,SKU-ELE-0176,Bolt Casa inteligente 176,Eletronicos,Casa inteligente,Aurora, 737.59 , 549.91 ,S,08/07/2025,"R$ 4,579"
+P0177,SKU-ESP-0177,Koru Fitness 177,Esporte,Fitness,Nimbus,732.11,"R$ 480,85",sim,17/06/2024,9.309
+P0178,SKU-MOD-0178,Lume Calcados 178,Moda,Calcados,Nexa,"R$ 888,81",561.86,FALSE,2025-09-18,1.858
+P0179,SKU-MOD-0179,Aurora Bolsas 179,Moda,Bolsas,Lume,"883,69",643.69,true,09/03/2026,"3,126"
+P0180,SKU-CAS-0180,Zenit Decoracao 180,Casa,Decoracao,Bolt,696.38,434.58,nao,2025/01/27,6.725
+P0181,SKU-BEL-0181,Vitta Skincare 181,Beleza,Skincare,Zenit,604.73,"475,62",sim,08/11/2025,7.830
+P0182,SKU-CAS-0182,Koru Cozinha 182,Casa,Cozinha,Koru,"68,56",32.63,sim,28/05/2024, 1.512 
+P0183,SKU-MOD-0183,Nexa Camisetas 183,Moda,Camisetas,Zenit,332.61, 186.73 ,sim,2025/10/30,5.062
+P0184,SKU-MOD-0184,Nimbus Camisetas 184,Moda,Camisetas,Bolt,"420,16", 287.98 ,sim,17/10/2024, 1.030 
+P0185,SKU-CAS-0185,Nimbus Organizacao 185,Casa,Organizacao,Lume,697.47,"338,12",0,25/09/2024,1.895
+P0186,SKU-MOD-0186,Bolt Calcados 186,Moda,Calcados,Koru,"R$ 713,22",449.40,S,2024/08/11,"3,445"
+P0187,SKU-ELE-0187,Bolt Casa inteligente 187,Eletronicos,Casa inteligente,Nimbus,202.16,135.41,nao,2026/06/11,"5,580"
+P0188,SKU-ELE-0188,Zenit Casa inteligente 188,Eletronicos,Casa inteligente,Nimbus,864.73,359.07,S,25/04/2026, 1.568 
+P0189,SKU-CAS-0189,Zenit Cozinha 189,Casa,Cozinha,Zenit,806.52,"581,03",sim,2026-03-10,"8,312"
+P0190,SKU-BEL-0190,Zenit Skincare 190,Beleza,Skincare,Lume,594.83,467.90,0,2024-04-24,"4,924"
+P0191,SKU-BEL-0191,Nexa Skincare 191,Beleza,Skincare,Vitta,367.13, 220.20 ,true,2026-01-25T19:07:56,9.927
+P0192,SKU-ELE-0192,Bolt Casa inteligente 192,Eletronicos,Casa inteligente,Nimbus,180.72,97.13,true,2025-02-13,1.409
+P0193,SKU-BEL-0193,Aurora Cabelo 193,Beleza,Cabelo,Vitta,"896,69",364.79,false,2026/09/02, 8.111 
+P0194,SKU-MOD-0194,Nimbus Camisetas 194,Moda,Camisetas,Lume,"R$ 773,39","412,28",true,30/06/2024,9.371
+P0195,SKU-ELE-0195,Lume Audio 195,Eletronicos,Audio,Aurora,180.73,"73,89",S,2026/06/05,1.804
+P0196,SKU-ESP-0196,Vitta Suplementos Esportivos 196,Esporte,Suplementos Esportivos,Koru,"855,08","465,94",sim,2025-12-19T19:07:56,"R$ 2,468"
+P0197,SKU-MOD-0197,Aurora Bolsas 197,Moda,Bolsas,Zenit,117.09, 65.37 ,1,2025-10-22T19:07:56,9.078
+P0198,SKU-BEL-0198,Vitta Cabelo 198,Beleza,Cabelo,Aurora,402.33,"249,10",false,2024/10/02,3.525
+P0199,SKU-ELE-0199,Zenit Audio 199,Eletronicos,Audio,Nimbus, 426.15 ,262.90,1,24/04/2026,6.267
+P0200,SKU-ELE-0200,Nexa Casa inteligente 200,Eletronicos,Casa inteligente,Koru,707.66,494.06,S,24/08/2025,6.908
+P0201,SKU-ESP-0201,Bolt Suplementos Esportivos 201,Esporte,Suplementos Esportivos,Aurora,"409,61", 257.76 ,true,2025/05/24,6.696
+P0202,SKU-ESP-0202,Bolt Fitness 202,Esporte,Fitness,Lume,"R$ 289,18",206.56,sim,2026-04-07,"0,960"
+P0203,SKU-ESP-0203,Vitta Outdoor 203,Esporte,Outdoor,Aurora,"544,80","R$ 348,06",S,01/03/2025, 6.489 
+P0204,SKU-ESP-0204,Zenit Outdoor 204,Esporte,Outdoor,Nimbus,247.67,177.54,S,03/06/2024,3.953
+P0205,SKU-BEL-0205,Zenit Skincare 205,Beleza,Skincare,Zenit,"R$ 598,59",448.69,1,2026-06-08T19:07:56, 9.267 
+P0206,SKU-CAS-0206,Nexa Organizacao 206,Casa,Organizacao,Lume,854.42,454.30,nao,17/05/2025,"R$ 4,728"
+P0207,SKU-CAS-0207,Aurora Cozinha 207,Casa,Cozinha,Aurora, 687.77 ,510.80,false,2024-04-27T19:07:56,"9,261"
+P0208,SKU-BEL-0208,Lume Skincare 208,Beleza,Skincare,Nexa,809.50,381.13,1,2026-06-30,"R$ 1,666"
+P0209,SKU-BEL-0209,Lume Skincare 209,Beleza,Skincare,Lume,584.83,281.21,1,2025-06-26T19:07:56,"1,074"
+P0210,SKU-ESP-0210,Zenit Outdoor 210,Esporte,Outdoor,Zenit,34.56,14.67,sim,2025-09-18T19:07:56,"8,237"
+P0211,SKU-CAS-0211,Nimbus Decoracao 211,Casa,Decoracao,Koru, 760.67 ,418.20,sim,2024-10-30T19:07:56,"R$ 7,890"
+P0212,SKU-BEL-0212,Lume Cabelo 212,Beleza,Cabelo,Lume,668.71,279.19,TRUE,2024/11/18,"6,600"
+P0213,SKU-MOD-0213,Vitta Calcados 213,Moda,Calcados,Vitta,"64,06","R$ 38,47",true,2025-07-19,"6,938"
+P0214,SKU-ESP-0214,Aurora Fitness 214,Esporte,Fitness,Aurora, 860.89 ,"588,10",S,23/05/2024,9.843
+P0215,SKU-CAS-0215,Lume Organizacao 215,Casa,Organizacao,Vitta, 693.83 , 483.26 ,TRUE,2025-10-10,"R$ 2,177"
+P0216,SKU-ELE-0216,Nimbus Audio 216,Eletronicos,Audio,Zenit,"R$ 310,84",155.74,sim,18/03/2024,9.601
+P0217,SKU-ESP-0217,Bolt Suplementos Esportivos 217,Esporte,Suplementos Esportivos,Zenit,"224,34",162.68,1,02/02/2025,"R$ 0,977"
+P0218,SKU-CAS-0218,Nexa Decoracao 218,Casa,Decoracao,Lume,"485,14",281.74,0,2024-11-07, 3.944 
+P0219,SKU-MOD-0219,Vitta Camisetas 219,Moda,Camisetas,Nimbus,713.72,"R$ 370,82",sim,2026-06-03,9.653
+P0220,SKU-CAS-0220,Zenit Decoracao 220,Casa,Decoracao,Aurora,"696,22","289,44",1,2025-07-28T19:07:56, 2.752 
+P0221,SKU-CAS-0221,Nexa Decoracao 221,Casa,Decoracao,Zenit,740.48,552.78,nao,2025-02-11,"9,607"
+P0222,SKU-BEL-0222,Vitta Cabelo 222,Beleza,Cabelo,Koru,"220,71",120.80,S,2026-07-30,0.622
+P0223,SKU-CAS-0223,Aurora Cozinha 223,Casa,Cozinha,Aurora, 195.60 ,"104,45",1,2025-03-30, 6.171 
+P0224,SKU-ELE-0224,Lume Casa inteligente 224,Eletronicos,Casa inteligente,Koru,30.51, 17.22 ,true,07/12/2024,2.213
+P0225,SKU-ESP-0225,Nexa Fitness 225,Esporte,Fitness,Koru,697.89,"436,49",true,2025/10/02,"4,600"
+P0226,SKU-ESP-0226,Zenit Fitness 226,Esporte,Fitness,Bolt, 668.11 ,366.83,TRUE,2026/01/06,7.171
+P0227,SKU-CAS-0227,Lume Cozinha 227,Casa,Cozinha,Koru,"R$ 507,40","382,88",N,15/04/2026,8.830
+P0228,SKU-CAS-0228,Nimbus Decoracao 228,Casa,Decoracao,Nimbus,188.55,"143,73",TRUE,2024-11-05T19:07:56,"R$ 2,393"
+P0229,SKU-ESP-0229,Aurora Suplementos Esportivos 229,Esporte,Suplementos Esportivos,Nexa,221.73, 124.79 ,sim,28/10/2024,"R$ 9,951"
+P0230,SKU-ESP-0230,Nexa Outdoor 230,Esporte,Outdoor,Vitta,539.66, 338.67 ,TRUE,29/09/2024,6.603
+P0231,SKU-MOD-0231,Koru Bolsas 231,Moda,Bolsas,Nimbus,"585,55",310.93,TRUE,2024-11-03T19:07:56,4.754
+P0232,SKU-ESP-0232,Nexa Fitness 232,Esporte,Fitness,Lume, 437.06 ,185.12,S,2025-07-18,"R$ 3,596"
+P0233,SKU-ESP-0233,Nexa Outdoor 233,Esporte,Outdoor,Aurora,852.59,"R$ 519,41",TRUE,2026-01-04, 0.287 
+P0234,SKU-MOD-0234,Bolt Bolsas 234,Moda,Bolsas,Koru, 404.17 ,"248,56",0,2025-11-25T19:07:56,8.955
+P0235,SKU-CAS-0235,Nexa Organizacao 235,Casa,Organizacao,Vitta,113.00,66.87,sim,22/07/2025,9.938
+P0236,SKU-CAS-0236,Koru Organizacao 236,Casa,Organizacao,Nimbus,421.98,259.36,S,2025-04-11,"7,618"
+P0237,SKU-ESP-0237,Zenit Suplementos Esportivos 237,Esporte,Suplementos Esportivos,Vitta,"468,97","R$ 373,64",TRUE,2025-03-09,"6,715"
+P0238,SKU-CAS-0238,Koru Cozinha 238,Casa,Cozinha,Vitta,647.27, 481.60 ,true,2025/02/13,"8,672"
+P0239,SKU-CAS-0239,Koru Cozinha 239,Casa,Cozinha,Zenit,322.65, 227.54 ,1,02/08/2025, 1.739 
+P0240,SKU-ELE-0240,Koru Casa inteligente 240,Eletronicos,Casa inteligente,Koru,"R$ 35,98",17.36,nao,2025/06/13,"0,357"
+P0241,SKU-ESP-0241,Aurora Suplementos Esportivos 241,Esporte,Suplementos Esportivos,Koru,"71,41","R$ 55,12",sim,2026-02-11T19:07:56,"R$ 8,446"
+P0242,SKU-BEL-0242,Koru Skincare 242,Beleza,Skincare,Vitta,652.39,"R$ 315,80",false,2024-08-20,9.767
+P0243,SKU-BEL-0243,Nexa Skincare 243,Beleza,Skincare,Zenit, 180.06 , 134.62 ,S,17/11/2025,6.676
+P0244,SKU-ESP-0244,Aurora Suplementos Esportivos 244,Esporte,Suplementos Esportivos,Aurora,596.05,"R$ 382,94",S,13/05/2025,2.587
+P0245,SKU-BEL-0245,Zenit Cabelo 245,Beleza,Cabelo,Nexa,"R$ 565,97","354,35",S,02/05/2024,"9,882"
+P0246,SKU-CAS-0246,Lume Cozinha 246,Casa,Cozinha,Aurora,"697,35","394,42",TRUE,2024-11-28T19:07:56, 2.928 
+P0247,SKU-BEL-0247,Koru Cabelo 247,Beleza,Cabelo,Bolt,507.89,236.51,true,2025/08/16,1.235
+P0248,SKU-ELE-0248,Nimbus Casa inteligente 248,Eletronicos,Casa inteligente,Lume,585.17, 399.50 ,1,2026-07-08,1.206
+P0249,SKU-ELE-0249,Zenit Casa inteligente 249,Eletronicos,Casa inteligente,Koru,"354,87", 250.51 ,S,01/09/2026,"1,176"
+P0250,SKU-ELE-0250,Bolt Audio 250,Eletronicos,Audio,Aurora,64.77,36.40,1,2025/06/30,"8,490"
+P0251,SKU-ELE-0251,Bolt Audio 251,Eletronicos,Audio,Lume,337.87,"170,16",sim,2025/11/20, 1.587 
+P0252,SKU-ESP-0252,Lume Outdoor 252,Esporte,Outdoor,Nexa,"766,53",526.08,N,2026-05-02,"7,650"
+P0253,SKU-BEL-0253,Nexa Cabelo 253,Beleza,Cabelo,Nexa,"747,93","559,92",S,15/12/2025, 6.407 
+P0254,SKU-ELE-0254,Vitta Audio 254,Eletronicos,Audio,Nimbus,85.21,"67,20",true,26/04/2026,1.420
+P0255,SKU-MOD-0255,Bolt Bolsas 255,Moda,Bolsas,Bolt,735.55,521.35,N,2026/09/25,"R$ 1,916"
+P0256,SKU-ELE-0256,Nexa Audio 256,Eletronicos,Audio,Lume,501.30, 238.26 ,1,2025/02/11,9.962
+P0257,SKU-ESP-0257,Aurora Outdoor 257,Esporte,Outdoor,Vitta,758.21,544.89,1,2024-04-22,0.306
+P0258,SKU-MOD-0258,Nimbus Camisetas 258,Moda,Camisetas,Aurora,"478,01", 237.54 ,1,2026-09-04T19:07:56,2.949
+P0259,SKU-BEL-0259,Lume Skincare 259,Beleza,Skincare,Koru,"R$ 875,13","674,45",true,2026-03-28T19:07:56,"4,179"
+P0260,SKU-ELE-0260,Vitta Audio 260,Eletronicos,Audio,Vitta,"683,91","511,81",1,2024-06-05T19:07:56,"R$ 6,189"
+P0261,SKU-ESP-0261,Lume Outdoor 261,Esporte,Outdoor,Vitta,"863,56",406.65,1,04/04/2026,2.203
+P0262,SKU-MOD-0262,Vitta Calcados 262,Moda,Calcados,Bolt, 771.96 ,608.79,sim,2026-08-06T19:07:56,"7,446"
+P0263,SKU-ELE-0263,Nexa Audio 263,Eletronicos,Audio,Vitta, 541.19 , 291.20 ,true,2025-08-16,2.872
+P0264,SKU-MOD-0264,Nimbus Calcados 264,Moda,Calcados,Koru,"289,78",136.88,1,14/05/2026,4.812
+P0265,SKU-BEL-0265,Zenit Cabelo 265,Beleza,Cabelo,Koru,684.83,"540,74",sim,2025-10-18,"9,072"
+P0266,SKU-ESP-0266,Vitta Outdoor 266,Esporte,Outdoor,Vitta,148.71, 76.50 ,TRUE,2025-12-03,3.011
+P0267,SKU-BEL-0267,Lume Cabelo 267,Beleza,Cabelo,Aurora,"R$ 461,04", 324.15 ,TRUE,2024/09/06,"0,902"
+P0268,SKU-ESP-0268,Vitta Suplementos Esportivos 268,Esporte,Suplementos Esportivos,Lume,"682,61",499.82,TRUE,2024-04-14T19:07:56,3.415
+P0269,SKU-BEL-0269,Nexa Cabelo 269,Beleza,Cabelo,Lume,"R$ 884,03","404,60",nao,2025/05/02, 9.183 
+P0270,SKU-ESP-0270,Aurora Outdoor 270,Esporte,Outdoor,Zenit,"436,31", 331.67 ,S,13/08/2024,"7,095"
+P0271,SKU-ELE-0271,Nexa Casa inteligente 271,Eletronicos,Casa inteligente,Nimbus,"863,87",617.10,N,2026-09-13,"8,888"
+P0272,SKU-MOD-0272,Zenit Bolsas 272,Moda,Bolsas,Vitta, 89.57 ,"R$ 66,28",1,2025-04-21,0.378
+P0273,SKU-BEL-0273,Nimbus Cabelo 273,Beleza,Cabelo,Nexa,568.71,314.78,1,10/12/2025,"2,997"
+P0274,SKU-CAS-0274,Koru Organizacao 274,Casa,Organizacao,Vitta,"831,94", 465.06 ,sim,31/07/2026,8.461
+P0275,SKU-ESP-0275,Zenit Suplementos Esportivos 275,Esporte,Suplementos Esportivos,Koru,459.88,"249,25",1,14/08/2024,"R$ 3,029"
+P0276,SKU-ELE-0276,Aurora Audio 276,Eletronicos,Audio,Nimbus, 212.28 ,"102,85",TRUE,2024-06-06T19:07:56,0.950
+P0277,SKU-BEL-0277,Lume Skincare 277,Beleza,Skincare,Bolt,246.58,"167,72",true,2024/03/08,"3,802"
+P0278,SKU-MOD-0278,Nexa Bolsas 278,Moda,Bolsas,Vitta,"276,98",164.86,S,23/05/2024, 0.471 
+P0279,SKU-ESP-0279,Nexa Outdoor 279,Esporte,Outdoor,Nimbus,"596,33","268,96",S,31/03/2026,4.619
+P0280,SKU-BEL-0280,Nimbus Skincare 280,Beleza,Skincare,Bolt, 529.37 ,285.19,FALSE,02/06/2024,"1,366"
+P0281,SKU-BEL-0281,Aurora Skincare 281,Beleza,Skincare,Vitta,577.35,"R$ 252,30",0,2026-06-10,6.696
+P0282,SKU-BEL-0282,Koru Cabelo 282,Beleza,Cabelo,Nimbus,"R$ 196,44","95,47",FALSE,2026-05-05, 9.450 
+P0283,SKU-ELE-0283,Vitta Casa inteligente 283,Eletronicos,Casa inteligente,Zenit,"538,79","355,82",true,03/03/2024,"1,939"
+P0284,SKU-MOD-0284,Nimbus Calcados 284,Moda,Calcados,Nimbus,"836,97",508.76,true,2025-05-08T19:07:56,4.124
+P0285,SKU-BEL-0285,Zenit Skincare 285,Beleza,Skincare,Aurora,260.97,170.09,TRUE,2026-04-29T19:07:56,3.407
+P0286,SKU-ELE-0286,Nexa Audio 286,Eletronicos,Audio,Bolt,"396,04", 302.51 ,TRUE,2024-12-26T19:07:56, 8.070 
+P0287,SKU-CAS-0287,Vitta Cozinha 287,Casa,Cozinha,Aurora, 503.91 ,"341,02",true,2026-01-01,2.945
+P0288,SKU-CAS-0288,Nexa Decoracao 288,Casa,Decoracao,Vitta,"551,26","388,63",TRUE,24/03/2025,7.163
+P0289,SKU-MOD-0289,Koru Calcados 289,Moda,Calcados,Koru, 329.99 ,241.44,TRUE,2024-10-31,1.505
+P0290,SKU-CAS-0290,Lume Organizacao 290,Casa,Organizacao,Lume,"R$ 787,83",400.27,true,18/11/2025,"R$ 7,635"
+P0291,SKU-ESP-0291,Bolt Fitness 291,Esporte,Fitness,Koru,"R$ 872,32","360,34",sim,01/10/2025,"5,995"
+P0292,SKU-MOD-0292,Aurora Calcados 292,Moda,Calcados,Nimbus,873.02,522.11,sim,2025-05-25T19:07:56,"7,980"
+P0293,SKU-CAS-0293,Lume Organizacao 293,Casa,Organizacao,Aurora,516.07, 342.97 ,true,23/12/2024,1.118
+P0294,SKU-BEL-0294,Lume Skincare 294,Beleza,Skincare,Aurora,"R$ 555,89","R$ 311,59",S,2025/07/18, 5.561 
+P0295,SKU-MOD-0295,Nexa Bolsas 295,Moda,Bolsas,Nexa,"R$ 815,47",503.79,S,2024/02/26,9.142
+P0296,SKU-ESP-0296,Zenit Suplementos Esportivos 296,Esporte,Suplementos Esportivos,Koru,"170,73", 118.44 ,true,2025-02-18T19:07:56,"9,691"
+P0297,SKU-ESP-0297,Lume Suplementos Esportivos 297,Esporte,Suplementos Esportivos,Nexa,"367,25","R$ 189,05",TRUE,2024/05/30,4.024
+P0298,SKU-ELE-0298,Vitta Audio 298,Eletronicos,Audio,Zenit, 644.29 ,"R$ 499,77",nao,2024/10/03,4.836
+P0299,SKU-BEL-0299,Vitta Skincare 299,Beleza,Skincare,Vitta,341.85,"173,62",true,2025-12-29,"1,384"
+P0300,SKU-ELE-0300,Nimbus Audio 300,Eletronicos,Audio,Koru,"R$ 762,01",464.26,1,11/05/2025,4.206
+P0301,SKU-CAS-0301,Zenit Cozinha 301,Casa,Cozinha,Vitta, 719.47 ,409.33,1,2024-12-21, 3.306 
+P0302,SKU-CAS-0302,Lume Cozinha 302,Casa,Cozinha,Aurora, 323.13 ,"184,21",sim,2024-10-16,"R$ 3,145"
+P0303,SKU-BEL-0303,Lume Skincare 303,Beleza,Skincare,Vitta,749.43,"R$ 530,30",S,2024-06-07T19:07:56,"1,223"
+P0304,SKU-ELE-0304,Koru Casa inteligente 304,Eletronicos,Casa inteligente,Nexa,406.13,278.83,0,05/03/2024,3.463
+P0305,SKU-BEL-0305,Lume Cabelo 305,Beleza,Cabelo,Nimbus,536.26,256.77,S,2025/12/21,"2,909"
+P0306,SKU-BEL-0306,Nimbus Cabelo 306,Beleza,Cabelo,Vitta,"R$ 696,54",358.57,true,2026-09-08T19:07:56,"R$ 9,097"
+P0307,SKU-CAS-0307,Vitta Cozinha 307,Casa,Cozinha,Aurora,337.90,"261,14",sim,2025/02/04,1.080
+P0308,SKU-BEL-0308,Lume Cabelo 308,Beleza,Cabelo,Lume,"R$ 746,86",516.86,1,2025-02-05T19:07:56,"1,880"
+P0309,SKU-BEL-0309,Koru Skincare 309,Beleza,Skincare,Koru,"893,24",602.79,S,2025/06/02,7.448
+P0310,SKU-ELE-0310,Vitta Audio 310,Eletronicos,Audio,Lume, 564.81 ,"293,05",TRUE,2025-11-14,"2,975"
+P0311,SKU-MOD-0311,Aurora Bolsas 311,Moda,Bolsas,Nexa, 105.09 ,"57,35",true,2026/03/16,"R$ 4,526"
+P0312,SKU-MOD-0312,Koru Camisetas 312,Moda,Camisetas,Vitta,"823,87","469,61",sim,2026-02-08T19:07:56,1.842
+P0313,SKU-ESP-0313,Aurora Suplementos Esportivos 313,Esporte,Suplementos Esportivos,Aurora,"257,11",156.67,1,24/04/2025,"1,825"
+P0314,SKU-ELE-0314,Koru Casa inteligente 314,Eletronicos,Casa inteligente,Zenit,141.94,"71,59",1,2024-08-12,"1,762"
+P0315,SKU-CAS-0315,Bolt Decoracao 315,Casa,Decoracao,Bolt,235.16, 123.01 ,S,2024-08-03T19:07:56,7.802
+P0316,SKU-ELE-0316,Koru Casa inteligente 316,Eletronicos,Casa inteligente,Nimbus,"859,31","R$ 428,41",S,26/05/2026, 9.913 
+P0317,SKU-MOD-0317,Aurora Calcados 317,Moda,Calcados,Aurora,"695,12",406.32,S,2025-01-05, 4.145 
+P0318,SKU-MOD-0318,Zenit Camisetas 318,Moda,Camisetas,Nimbus,326.30,"152,95",TRUE,2025/11/28,"R$ 5,044"
+P0319,SKU-MOD-0319,Bolt Bolsas 319,Moda,Bolsas,Zenit,"R$ 479,24",194.63,S,2026/07/04,4.544
+P0320,SKU-CAS-0320,Bolt Organizacao 320,Casa,Organizacao,Lume,"652,83", 397.33 ,S,2025-10-08T19:07:56,"4,829"
+P0321,SKU-CAS-0321,Nimbus Organizacao 321,Casa,Organizacao,Zenit,"R$ 81,46","52,64",TRUE,2026-01-19T19:07:56, 5.423 
+P0322,SKU-CAS-0322,Lume Cozinha 322,Casa,Cozinha,Koru,"R$ 97,29",60.96,1,2024-05-26T19:07:56,"R$ 6,214"
+P0323,SKU-ESP-0323,Aurora Fitness 323,Esporte,Fitness,Nexa,877.11, 358.65 ,true,2025-08-27,3.955
+P0324,SKU-CAS-0324,Nimbus Cozinha 324,Casa,Cozinha,Nexa,317.06,157.47,TRUE,2025-03-22T19:07:56,"2,604"
+P0325,SKU-CAS-0325,Nexa Decoracao 325,Casa,Decoracao,Bolt,381.73,254.44,sim,2025/08/16, 0.170 
+P0326,SKU-ESP-0326,Bolt Suplementos Esportivos 326,Esporte,Suplementos Esportivos,Koru,"61,32",32.61,S,2026-08-24T19:07:56,"1,931"
+P0327,SKU-ESP-0327,Vitta Fitness 327,Esporte,Fitness,Nimbus,"431,24",261.85,false,2024-08-17T19:07:56,"R$ 9,946"
+P0328,SKU-BEL-0328,Lume Cabelo 328,Beleza,Cabelo,Lume,883.61,"450,41",1,28/03/2025,3.842
+P0329,SKU-BEL-0329,Bolt Skincare 329,Beleza,Skincare,Nimbus,"797,32",373.69,sim,2024/05/18, 7.529 
+P0330,SKU-MOD-0330,Zenit Camisetas 330,Moda,Camisetas,Nimbus,209.69,"R$ 107,24",N,15/08/2026,"R$ 4,493"
+P0331,SKU-ESP-0331,Nexa Outdoor 331,Esporte,Outdoor,Nimbus,"240,98", 126.98 ,true,2024/08/02,9.937
+P0332,SKU-ESP-0332,Nimbus Outdoor 332,Esporte,Outdoor,Vitta,859.90, 603.26 ,true,2024-04-02T19:07:56,4.780
+P0333,SKU-BEL-0333,Bolt Skincare 333,Beleza,Skincare,Vitta,"856,52","R$ 392,25",S,28/07/2025,6.742
+P0334,SKU-ELE-0334,Zenit Casa inteligente 334,Eletronicos,Casa inteligente,Lume,211.23,"R$ 145,92",S,2025/12/26,"1,987"
+P0335,SKU-MOD-0335,Koru Calcados 335,Moda,Calcados,Lume,656.49, 500.36 ,0,30/04/2026,"0,375"
+P0336,SKU-BEL-0336,Zenit Cabelo 336,Beleza,Cabelo,Lume,"115,52",83.76,1,15/06/2025,"7,914"
+P0337,SKU-MOD-0337,Bolt Calcados 337,Moda,Calcados,Zenit,233.93,"R$ 108,51",true,16/05/2026,4.963
+P0338,SKU-BEL-0338,Lume Skincare 338,Beleza,Skincare,Lume,736.25,547.36,sim,2025-03-13, 9.368 
+P0339,SKU-ESP-0339,Nexa Fitness 339,Esporte,Fitness,Vitta,"376,19","R$ 245,74",TRUE,2026-05-12, 7.967 
+P0340,SKU-ESP-0340,Zenit Fitness 340,Esporte,Fitness,Lume,315.22, 137.23 ,S,2026-06-06,"2,560"
+P0341,SKU-ELE-0341,Nexa Casa inteligente 341,Eletronicos,Casa inteligente,Aurora,851.26,487.35,1,28/03/2025,9.211
+P0342,SKU-ELE-0342,Nimbus Casa inteligente 342,Eletronicos,Casa inteligente,Nimbus,422.91,188.24,sim,2025/11/06,6.546
+P0343,SKU-CAS-0343,Koru Organizacao 343,Casa,Organizacao,Nimbus,"261,43","160,44",sim,2025-07-07,"R$ 8,180"
+P0344,SKU-CAS-0344,Koru Cozinha 344,Casa,Cozinha,Aurora,"R$ 619,12",459.50,false,2025/09/05,"4,758"
+P0345,SKU-MOD-0345,Nimbus Calcados 345,Moda,Calcados,Aurora,745.28,"R$ 587,19",true,2025/12/10,1.766
+P0346,SKU-ELE-0346,Nexa Audio 346,Eletronicos,Audio,Koru,"R$ 120,65", 89.82 ,false,2024-04-29T19:07:56,"R$ 8,625"
+P0347,SKU-BEL-0347,Zenit Cabelo 347,Beleza,Cabelo,Nimbus,"R$ 741,49",538.59,sim,2025/08/18,3.614
+P0348,SKU-CAS-0348,Aurora Cozinha 348,Casa,Cozinha,Aurora,599.09, 291.07 ,1,26/06/2024,"R$ 2,511"
+P0349,SKU-CAS-0349,Nimbus Cozinha 349,Casa,Cozinha,Aurora,782.47,"R$ 422,04",1,2024-12-18,"3,274"
+P0350,SKU-BEL-0350,Koru Cabelo 350,Beleza,Cabelo,Lume, 558.55 ,"R$ 387,41",sim,01/10/2024,5.824
+P0351,SKU-CAS-0351,Lume Decoracao 351,Casa,Decoracao,Bolt,357.94,"238,63",S,13/06/2024,3.925
+P0352,SKU-CAS-0352,Vitta Decoracao 352,Casa,Decoracao,Lume,"701,69","R$ 407,85",true,29/08/2024,"0,134"
+P0353,SKU-MOD-0353,Nexa Camisetas 353,Moda,Camisetas,Zenit,"349,21","212,74",sim,2025-11-09T19:07:56,"9,049"
+P0354,SKU-MOD-0354,Koru Camisetas 354,Moda,Camisetas,Bolt,432.40,262.70,TRUE,2024-08-24T19:07:56, 5.288 
+P0355,SKU-CAS-0355,Nimbus Cozinha 355,Casa,Cozinha,Zenit,402.01,"R$ 185,22",sim,2025-05-01, 4.820 
+P0356,SKU-BEL-0356,Bolt Cabelo 356,Beleza,Cabelo,Nexa,"409,33", 295.05 ,true,2026-10-05,"R$ 9,210"
+P0357,SKU-ELE-0357,Vitta Casa inteligente 357,Eletronicos,Casa inteligente,Aurora,"R$ 221,65","R$ 111,69",true,2026-04-21T19:07:56, 8.734 
+P0358,SKU-CAS-0358,Vitta Cozinha 358,Casa,Cozinha,Koru,246.08,"108,87",N,2026-07-28,"R$ 1,080"
+P0359,SKU-ELE-0359,Koru Audio 359,Eletronicos,Audio,Lume,787.51,526.28,FALSE,2026-01-09T19:07:56,4.886
+P0360,SKU-BEL-0360,Koru Cabelo 360,Beleza,Cabelo,Vitta,"208,14",156.45,TRUE,2024/08/11,8.036
+P0361,SKU-CAS-0361,Nexa Cozinha 361,Casa,Cozinha,Nexa,"R$ 501,52", 357.76 ,S,2024-09-29T19:07:56,"R$ 1,390"
+P0362,SKU-ESP-0362,Nexa Fitness 362,Esporte,Fitness,Zenit,"R$ 749,84",580.92,TRUE,2025-05-30T19:07:56,6.364
+P0363,SKU-BEL-0363,Koru Skincare 363,Beleza,Skincare,Koru,727.93,"558,14",nao,2026/09/30,4.782
+P0364,SKU-CAS-0364,Vitta Organizacao 364,Casa,Organizacao,Lume,"757,49","334,53",sim,2025/01/25,"R$ 6,009"
+P0365,SKU-CAS-0365,Lume Cozinha 365,Casa,Cozinha,Vitta,"453,69","316,08",true,25/10/2024, 7.642 
+P0366,SKU-ESP-0366,Vitta Outdoor 366,Esporte,Outdoor,Lume, 669.05 ,502.41,true,2025/05/22, 4.814 
+P0367,SKU-BEL-0367,Aurora Skincare 367,Beleza,Skincare,Koru,88.76, 56.94 ,sim,2025/08/04,4.322
+P0368,SKU-BEL-0368,Koru Cabelo 368,Beleza,Cabelo,Koru,685.71,"366,87",N,2025-03-17T19:07:56,"2,177"
+P0369,SKU-CAS-0369,Bolt Organizacao 369,Casa,Organizacao,Nimbus,"R$ 56,05","32,66",sim,2024-04-26T19:07:56,7.354
+P0370,SKU-MOD-0370,Bolt Camisetas 370,Moda,Camisetas,Nimbus,"R$ 540,60",360.82,1,2025-04-10T19:07:56,"5,382"
+P0371,SKU-ESP-0371,Aurora Outdoor 371,Esporte,Outdoor,Nexa,"R$ 302,10","R$ 204,29",1,18/01/2026,"6,547"
+P0372,SKU-MOD-0372,Lume Bolsas 372,Moda,Bolsas,Nimbus,"197,08","86,07",nao,2025-09-27,5.241
+P0373,SKU-ESP-0373,Nexa Outdoor 373,Esporte,Outdoor,Nimbus,"345,13",167.10,TRUE,2026-08-21T19:07:56,"R$ 1,815"
+P0374,SKU-BEL-0374,Bolt Cabelo 374,Beleza,Cabelo,Nexa,708.91,"388,98",true,2024-10-31, 7.618 
+P0375,SKU-ESP-0375,Lume Fitness 375,Esporte,Fitness,Zenit,"405,78","197,26",0,2024-07-07T19:07:56,"6,667"
+P0376,SKU-ESP-0376,Nimbus Outdoor 376,Esporte,Outdoor,Koru,"670,60",351.54,true,22/11/2025,5.471
+P0377,SKU-BEL-0377,Nexa Cabelo 377,Beleza,Cabelo,Koru,"295,19",228.52,true,2024-09-11T19:07:56,5.890
+P0378,SKU-BEL-0378,Vitta Cabelo 378,Beleza,Cabelo,Vitta,"682,21",501.23,0,2025/06/05,2.022
+P0379,SKU-ESP-0379,Zenit Outdoor 379,Esporte,Outdoor,Aurora,"R$ 149,17",104.72,N,2026/04/01, 2.718 
+P0380,SKU-ESP-0380,Vitta Suplementos Esportivos 380,Esporte,Suplementos Esportivos,Koru,"121,36", 81.21 ,TRUE,2025-02-20T19:07:56,"2,994"
+P0381,SKU-CAS-0381,Zenit Organizacao 381,Casa,Organizacao,Vitta,112.88,"82,94",sim,2025/07/08,3.998
+P0382,SKU-BEL-0382,Vitta Skincare 382,Beleza,Skincare,Koru,"105,04","80,07",1,2024-03-29T19:07:56,8.194
+P0383,SKU-ESP-0383,Bolt Outdoor 383,Esporte,Outdoor,Lume,85.13,"56,13",0,2025/01/13,"R$ 1,816"
+P0384,SKU-BEL-0384,Nexa Skincare 384,Beleza,Skincare,Zenit, 695.32 ,309.33,sim,12/03/2024,0.454
+P0385,SKU-ESP-0385,Zenit Suplementos Esportivos 385,Esporte,Suplementos Esportivos,Aurora,701.17, 481.36 ,0,2024-03-20T19:07:56,5.079
+P0386,SKU-ELE-0386,Bolt Audio 386,Eletronicos,Audio,Nexa,363.20,279.72,true,25/02/2025,"2,625"
+P0387,SKU-CAS-0387,Vitta Organizacao 387,Casa,Organizacao,Nexa,291.81,178.44,1,2026-08-14T19:07:56,"R$ 7,574"
+P0388,SKU-ESP-0388,Nimbus Suplementos Esportivos 388,Esporte,Suplementos Esportivos,Bolt,"300,27","135,13",1,12/11/2024,2.757
+P0389,SKU-ESP-0389,Koru Suplementos Esportivos 389,Esporte,Suplementos Esportivos,Vitta,"812,41","R$ 519,56",S,2025-08-07,1.465
+P0390,SKU-ESP-0390,Koru Suplementos Esportivos 390,Esporte,Suplementos Esportivos,Lume,319.60,165.61,TRUE,2025/04/02, 1.860 
+P0391,SKU-ESP-0391,Nexa Suplementos Esportivos 391,Esporte,Suplementos Esportivos,Aurora, 668.29 , 300.03 ,nao,2026-06-15,0.747
+P0392,SKU-ELE-0392,Koru Audio 392,Eletronicos,Audio,Nimbus,675.05,"507,12",S,12/04/2026,8.055
+P0393,SKU-ESP-0393,Vitta Outdoor 393,Esporte,Outdoor,Nimbus, 553.66 ,260.81,true,04/06/2024,1.578
+P0394,SKU-CAS-0394,Nexa Cozinha 394,Casa,Cozinha,Zenit, 782.28 ,349.85,true,06/09/2024,1.893
+P0395,SKU-ESP-0395,Aurora Outdoor 395,Esporte,Outdoor,Koru,572.55,"397,37",TRUE,2025-04-21T19:07:56,5.973
+P0396,SKU-CAS-0396,Lume Decoracao 396,Casa,Decoracao,Zenit,"895,67","528,07",FALSE,2025-09-07T19:07:56,"R$ 0,787"
+P0397,SKU-ESP-0397,Nimbus Suplementos Esportivos 397,Esporte,Suplementos Esportivos,Lume,"284,99",195.80,1,30/09/2025,"R$ 6,197"
+P0398,SKU-CAS-0398,Vitta Cozinha 398,Casa,Cozinha,Vitta,392.23,"R$ 218,87",S,28/05/2024,"R$ 5,548"
+P0399,SKU-BEL-0399,Koru Skincare 399,Beleza,Skincare,Vitta,691.01,"333,50",false,16/11/2024,"R$ 1,568"
+P0400,SKU-MOD-0400,Vitta Camisetas 400,Moda,Camisetas,Bolt,"262,65","R$ 120,22",TRUE,2025-11-26,"R$ 3,253"
+P0401,SKU-BEL-0401,Koru Skincare 401,Beleza,Skincare,Zenit, 764.52 ,"413,23",nao,28/05/2026,4.005
+P0402,SKU-BEL-0402,Lume Cabelo 402,Beleza,Cabelo,Bolt,"508,87",224.39,nao,2026-09-16,9.204
+P0403,SKU-ELE-0403,Nimbus Audio 403,Eletronicos,Audio,Bolt,727.84,525.01,1,16/09/2025,"R$ 3,315"
+P0404,SKU-BEL-0404,Aurora Cabelo 404,Beleza,Cabelo,Aurora,"659,50", 471.08 ,TRUE,2025-04-02T19:07:56,"6,407"
+P0405,SKU-ESP-0405,Nimbus Outdoor 405,Esporte,Outdoor,Zenit,"814,60",604.38,true,2025/08/24,4.749
+P0406,SKU-ESP-0406,Lume Outdoor 406,Esporte,Outdoor,Nimbus,"327,68",152.75,sim,2026-06-07,4.386
+P0407,SKU-ESP-0407,Zenit Outdoor 407,Esporte,Outdoor,Koru,"R$ 638,05",375.25,1,2025-07-07,"1,895"
+P0408,SKU-CAS-0408,Nexa Cozinha 408,Casa,Cozinha,Nexa, 470.44 ,"R$ 240,22",TRUE,2024/08/06,"R$ 5,885"
+P0409,SKU-ELE-0409,Vitta Audio 409,Eletronicos,Audio,Bolt,"R$ 222,32",164.80,true,29/08/2025, 5.500 
+P0410,SKU-ELE-0410,Koru Casa inteligente 410,Eletronicos,Casa inteligente,Nimbus,"R$ 162,83",118.62,sim,2024/11/29,6.273
+P0411,SKU-ELE-0411,Zenit Audio 411,Eletronicos,Audio,Nimbus,"725,76","R$ 391,34",true,2024/03/28, 2.946 
+P0412,SKU-ESP-0412,Vitta Fitness 412,Esporte,Fitness,Koru, 290.07 ,"142,47",S,2024-08-25,"R$ 3,498"
+P0413,SKU-ELE-0413,Aurora Audio 413,Eletronicos,Audio,Koru,274.77,207.09,TRUE,2026-03-13,5.187
+P0414,SKU-ELE-0414,Nexa Casa inteligente 414,Eletronicos,Casa inteligente,Nimbus, 336.62 ,"156,96",true,29/08/2026,"8,882"
+P0415,SKU-ESP-0415,Zenit Fitness 415,Esporte,Fitness,Nimbus,437.07,"193,11",1,2024-07-30,"R$ 2,710"
+P0416,SKU-ESP-0416,Koru Suplementos Esportivos 416,Esporte,Suplementos Esportivos,Lume,227.65,167.71,true,2026/09/25,4.292
+P0417,SKU-ESP-0417,Aurora Fitness 417,Esporte,Fitness,Nimbus, 197.39 ,"116,79",sim,2026/08/26,"2,424"
+P0418,SKU-ELE-0418,Zenit Audio 418,Eletronicos,Audio,Nexa,"639,30", 445.78 ,1,2024/12/23, 1.271 
+P0419,SKU-ESP-0419,Aurora Outdoor 419,Esporte,Outdoor,Nimbus,"48,90", 36.38 ,1,10/01/2025, 8.237 
+P0420,SKU-MOD-0420,Nimbus Bolsas 420,Moda,Bolsas,Aurora,"259,22","R$ 163,42",TRUE,18/08/2025,2.492
+P0421,SKU-BEL-0421,Aurora Cabelo 421,Beleza,Cabelo,Aurora,495.16,385.27,sim,2025/09/28,1.352
+P0422,SKU-BEL-0422,Vitta Cabelo 422,Beleza,Cabelo,Lume,363.66, 206.93 ,true,2026-01-27T19:07:56,"R$ 8,489"
+P0423,SKU-MOD-0423,Bolt Calcados 423,Moda,Calcados,Nexa,785.04,"R$ 451,92",S,19/05/2024,"8,529"
+P0424,SKU-CAS-0424,Nimbus Decoracao 424,Casa,Decoracao,Nimbus,173.79,104.43,1,2024-07-31,2.098
+P0425,SKU-MOD-0425,Vitta Calcados 425,Moda,Calcados,Zenit, 347.33 ,165.46,TRUE,2024-07-29T19:07:56, 8.989 
+P0426,SKU-ESP-0426,Vitta Suplementos Esportivos 426,Esporte,Suplementos Esportivos,Lume,649.92,"R$ 268,48",sim,2025/03/31,5.931
+P0427,SKU-ELE-0427,Koru Audio 427,Eletronicos,Audio,Vitta,"634,89",484.56,S,2026-09-20T19:07:56,"5,618"
+P0428,SKU-ELE-0428,Koru Audio 428,Eletronicos,Audio,Bolt,"R$ 93,93","53,44",S,2025-12-13,"4,359"
+P0429,SKU-BEL-0429,Nexa Cabelo 429,Beleza,Cabelo,Zenit,896.55,"R$ 531,24",S,2025/08/26,7.331
+P0430,SKU-MOD-0430,Zenit Camisetas 430,Moda,Camisetas,Nexa,"R$ 41,77",30.82,sim,2025/04/13,"R$ 1,942"
+P0431,SKU-ESP-0431,Koru Outdoor 431,Esporte,Outdoor,Nimbus, 83.63 ,"66,35",S,2024-11-14T19:07:56,2.197
+P0432,SKU-BEL-0432,Aurora Skincare 432,Beleza,Skincare,Koru,"796,05",529.21,sim,2025-11-30,8.149
+P0433,SKU-BEL-0433,Vitta Skincare 433,Beleza,Skincare,Bolt, 596.41 ,"R$ 312,05",sim,2026-08-01,3.536
+P0434,SKU-BEL-0434,Bolt Cabelo 434,Beleza,Cabelo,Nimbus,"R$ 470,39","232,15",true,2026-03-07T19:07:56,0.406
+P0435,SKU-CAS-0435,Nimbus Cozinha 435,Casa,Cozinha,Koru, 328.22 ,152.42,N,2026-07-07,"0,807"
+P0436,SKU-MOD-0436,Nimbus Camisetas 436,Moda,Camisetas,Nexa,"816,26","493,70",TRUE,2024/03/24,"2,496"
+P0437,SKU-CAS-0437,Lume Organizacao 437,Casa,Organizacao,Lume,"208,55","R$ 107,26",sim,28/04/2026, 6.027 
+P0438,SKU-BEL-0438,Lume Skincare 438,Beleza,Skincare,Nexa,"493,84","389,67",TRUE,2026-03-07T19:07:56,"3,058"
+P0439,SKU-BEL-0439,Lume Cabelo 439,Beleza,Cabelo,Bolt,"787,13",368.72,S,2025/04/10,1.111
+P0440,SKU-ELE-0440,Koru Casa inteligente 440,Eletronicos,Casa inteligente,Nexa,161.15,"R$ 111,37",sim,2024/07/12,"R$ 2,491"
+P0441,SKU-BEL-0441,Bolt Skincare 441,Beleza,Skincare,Zenit,732.64,557.00,true,2026/03/25,0.863
+P0442,SKU-MOD-0442,Koru Calcados 442,Moda,Calcados,Bolt,308.81,136.35,sim,26/12/2025,"R$ 6,274"
+P0443,SKU-ESP-0443,Koru Outdoor 443,Esporte,Outdoor,Nexa,"R$ 368,01", 167.34 ,FALSE,2024/11/18,"4,694"
+P0444,SKU-ELE-0444,Nexa Audio 444,Eletronicos,Audio,Koru,"357,21",167.11,true,2026/07/20,2.683
+P0445,SKU-ELE-0445,Zenit Audio 445,Eletronicos,Audio,Lume,666.72,338.85,sim,29/03/2024,3.445
+P0446,SKU-MOD-0446,Aurora Bolsas 446,Moda,Bolsas,Nexa,298.54,"135,98",TRUE,2026-01-21T19:07:56,"8,883"
+P0447,SKU-BEL-0447,Vitta Cabelo 447,Beleza,Cabelo,Koru,"232,87",182.60,TRUE,2025-04-27,"R$ 5,084"
+P0448,SKU-CAS-0448,Nexa Decoracao 448,Casa,Decoracao,Vitta,310.43,217.47,N,2024-09-04, 1.301 
+P0449,SKU-CAS-0449,Nexa Organizacao 449,Casa,Organizacao,Zenit,123.58,"72,56",true,26/02/2025,"2,888"
+P0450,SKU-ESP-0450,Lume Suplementos Esportivos 450,Esporte,Suplementos Esportivos,Zenit,"459,95",191.30,0,2025-11-13,0.347
+P0451,SKU-CAS-0451,Vitta Cozinha 451,Casa,Cozinha,Nimbus,"598,17", 316.44 ,true,29/07/2024,"7,785"
+P0452,SKU-BEL-0452,Lume Cabelo 452,Beleza,Cabelo,Zenit,"303,41", 167.40 ,TRUE,2026/06/13, 4.006 
+P0453,SKU-ELE-0453,Koru Audio 453,Eletronicos,Audio,Vitta,621.17, 262.81 ,S,2024-06-20,"2,246"
+P0454,SKU-BEL-0454,Nimbus Cabelo 454,Beleza,Cabelo,Vitta,759.95,"333,95",sim,2025-04-20,5.686
+P0455,SKU-MOD-0455,Bolt Camisetas 455,Moda,Camisetas,Vitta, 757.48 , 461.52 ,sim,2025-06-22,"1,650"
+P0456,SKU-BEL-0456,Bolt Cabelo 456,Beleza,Cabelo,Nexa,306.93,"R$ 193,42",sim,07/10/2025,7.293
+P0457,SKU-CAS-0457,Nexa Decoracao 457,Casa,Decoracao,Aurora,"883,64",447.72,nao,2025-07-03T19:07:56,3.911
+P0458,SKU-CAS-0458,Nimbus Organizacao 458,Casa,Organizacao,Koru, 548.86 , 301.23 ,1,2025/05/15, 8.327 
+P0459,SKU-CAS-0459,Bolt Cozinha 459,Casa,Cozinha,Nexa,"81,64",46.89,1,2025-08-25,"2,637"
+P0460,SKU-BEL-0460,Aurora Skincare 460,Beleza,Skincare,Bolt,"R$ 599,41", 322.94 ,S,2024-08-22T19:07:56,"R$ 1,325"
+P0461,SKU-MOD-0461,Aurora Camisetas 461,Moda,Camisetas,Lume,"498,60",370.44,1,2026-08-27,"R$ 1,772"
+P0462,SKU-ELE-0462,Vitta Casa inteligente 462,Eletronicos,Casa inteligente,Nexa,484.44,"195,61",TRUE,2024/05/27,0.784
+P0463,SKU-CAS-0463,Nimbus Cozinha 463,Casa,Cozinha,Aurora,"313,63","238,04",1,13/08/2025,"0,303"
+P0464,SKU-ESP-0464,Zenit Outdoor 464,Esporte,Outdoor,Lume,327.98,"R$ 194,25",sim,2025-02-25,"0,410"
+P0465,SKU-CAS-0465,Vitta Cozinha 465,Casa,Cozinha,Zenit, 789.79 ,"R$ 577,30",1,2026-05-14T19:07:56,"5,396"
+P0466,SKU-ESP-0466,Lume Suplementos Esportivos 466,Esporte,Suplementos Esportivos,Koru, 398.64 ,"R$ 252,13",sim,2025-09-28T19:07:56,"3,579"
+P0467,SKU-CAS-0467,Aurora Decoracao 467,Casa,Decoracao,Zenit,"349,52","257,33",true,2024-06-04,"3,711"
+P0468,SKU-CAS-0468,Zenit Decoracao 468,Casa,Decoracao,Vitta, 59.40 ,"25,94",TRUE,2025-11-20T19:07:56,1.402
+P0469,SKU-CAS-0469,Bolt Decoracao 469,Casa,Decoracao,Vitta, 748.72 ,330.95,TRUE,2025-04-15T19:07:56,"R$ 8,261"
+P0470,SKU-ESP-0470,Lume Suplementos Esportivos 470,Esporte,Suplementos Esportivos,Koru, 116.59 , 55.14 ,TRUE,2024-09-21T19:07:56,"6,678"
+P0471,SKU-BEL-0471,Vitta Cabelo 471,Beleza,Cabelo,Aurora,"183,44","129,72",sim,2024-09-29T19:07:56,"R$ 8,587"
+P0472,SKU-MOD-0472,Lume Calcados 472,Moda,Calcados,Bolt,"248,57",189.08,TRUE,2024-04-02,"R$ 8,787"
+P0473,SKU-MOD-0473,Koru Calcados 473,Moda,Calcados,Nimbus,"400,76",187.30,true,2026-02-12T19:07:56,"4,947"
+P0474,SKU-BEL-0474,Nexa Cabelo 474,Beleza,Cabelo,Nimbus,"R$ 668,28",392.08,TRUE,17/06/2026,3.900
+P0475,SKU-MOD-0475,Aurora Calcados 475,Moda,Calcados,Vitta,"480,30",286.04,1,2024-05-24,"4,120"
+P0476,SKU-BEL-0476,Aurora Cabelo 476,Beleza,Cabelo,Lume,"128,45",80.22,N,2026-02-04, 3.569 
+P0477,SKU-ELE-0477,Zenit Casa inteligente 477,Eletronicos,Casa inteligente,Aurora,"578,74",244.50,S,2024-09-23T19:07:56,4.032
+P0478,SKU-BEL-0478,Nimbus Cabelo 478,Beleza,Cabelo,Nimbus,461.22,"315,36",sim,30/12/2025,8.035
+P0479,SKU-ELE-0479,Bolt Audio 479,Eletronicos,Audio,Koru,186.83,"R$ 80,28",true,2025-07-02T19:07:56,3.411
+P0480,SKU-BEL-0480,Zenit Cabelo 480,Beleza,Cabelo,Koru,"215,60", 93.06 ,true,2025/11/04,"4,851"
+P0481,SKU-ESP-0481,Koru Fitness 481,Esporte,Fitness,Lume,744.57,"379,63",true,2026-04-11,"4,332"
+P0482,SKU-ESP-0482,Nimbus Fitness 482,Esporte,Fitness,Nimbus, 765.13 ,"R$ 436,07",true,2024-05-04, 7.182 
+P0483,SKU-MOD-0483,Koru Camisetas 483,Moda,Camisetas,Aurora,272.27, 148.71 ,true,2025-06-20,7.291
+P0484,SKU-BEL-0484,Vitta Cabelo 484,Beleza,Cabelo,Aurora,772.04,"R$ 350,91",1,2026-10-06T19:07:56,"9,225"
+P0485,SKU-BEL-0485,Nimbus Cabelo 485,Beleza,Cabelo,Bolt,"678,74",341.07,true,2025/02/04,"4,478"
+P0486,SKU-CAS-0486,Nexa Organizacao 486,Casa,Organizacao,Nexa,417.84,303.12,true,07/05/2024,"5,016"
+P0487,SKU-MOD-0487,Lume Camisetas 487,Moda,Camisetas,Vitta,88.25,"R$ 37,69",sim,04/09/2026, 8.959 
+P0488,SKU-BEL-0488,Aurora Skincare 488,Beleza,Skincare,Zenit,322.43,"R$ 209,93",TRUE,2024-10-15,"8,526"
+P0489,SKU-BEL-0489,Koru Skincare 489,Beleza,Skincare,Nexa,"98,79",78.04,true,2026/07/16,"0,266"
+P0490,SKU-ELE-0490,Koru Casa inteligente 490,Eletronicos,Casa inteligente,Bolt,596.37,"417,34",FALSE,2025-10-20T19:07:56,"R$ 0,303"
+P0491,SKU-BEL-0491,Bolt Skincare 491,Beleza,Skincare,Aurora,"R$ 899,66",395.86,sim,2024-08-16T19:07:56,1.823
+P0492,SKU-BEL-0492,Nexa Cabelo 492,Beleza,Cabelo,Lume, 116.26 ,"70,76",sim,21/10/2025,1.931
+P0493,SKU-CAS-0493,Nexa Cozinha 493,Casa,Cozinha,Aurora,"R$ 875,78","356,35",1,2024-11-06,"2,769"
+P0494,SKU-ELE-0494,Vitta Casa inteligente 494,Eletronicos,Casa inteligente,Koru,"R$ 133,80",87.45,1,2025-10-26T19:07:56,8.483
+P0495,SKU-ESP-0495,Nimbus Outdoor 495,Esporte,Outdoor,Lume,"295,13","122,88",N,2025-06-15,"0,670"
+P0496,SKU-CAS-0496,Nimbus Cozinha 496,Casa,Cozinha,Aurora,"543,42", 290.41 ,true,2026-04-28T19:07:56,7.493
+P0497,SKU-ESP-0497,Lume Fitness 497,Esporte,Fitness,Lume,"R$ 57,10","R$ 39,75",sim,2025-07-23, 8.968 
+P0498,SKU-CAS-0498,Aurora Decoracao 498,Casa,Decoracao,Vitta,"125,00","R$ 56,81",TRUE,2026/05/19, 8.534 
+P0499,SKU-CAS-0499,Aurora Organizacao 499,Casa,Organizacao,Koru,"497,36",376.13,1,26/12/2025,"3,048"
+P0500,SKU-BEL-0500,Zenit Cabelo 500,Beleza,Cabelo,Nimbus,662.90,"404,10",S,2024-07-31T19:07:56,"1,589"
