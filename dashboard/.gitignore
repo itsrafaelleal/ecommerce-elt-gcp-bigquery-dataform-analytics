@@ -1,0 +1,28 @@
+# Ambientes Virtuais e Caches
+.venv/
+env/
+venv/
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+
+# Streamlit e Configurações Locais
+.streamlit/secrets.toml
+.streamlit/secrets.json
+
+# Credenciais e Chaves de Nuvem
+*.json
+*.pem
+*.key
+*.env
+*credentials*
+*service_account*
+
+# Dados Locais e Cache de Dados
+data/
+data_cache/
+*.csv
+*.parquet
+*.xlsx
+.DS_Store
