@@ -1,0 +1,58 @@
+{
+    "projeto": "veloja-ecommerce-medalhao",
+    "bucket": "veloja-ecommerce-medalhao-raw",
+    "raw_prefix": "raw/ecommerce/20261119",
+    "gerado_em_utc": "2026-11-22T20:47:27.206794+00:00",
+    "total_arquivos": 7,
+    "arquivos": [
+        {
+            "nome": "clientes_example.csv",
+            "nome_destino": "clientes.csv",
+            "tamanho_bytes": 3077776,
+            "sha256": "15811ecb06adfcd5311c4af980c2633724cbe8068fbb9499a03e2545e66b5f10",
+            "destino_gcs": "gs://veloja-ecommerce-medalhao-raw/raw/ecommerce/20261119/clientes.csv"
+        },
+        {
+            "nome": "produtos_example.csv",
+            "nome_destino": "produtos.csv",
+            "tamanho_bytes": 52143,
+            "sha256": "bcff887069fb795b97f46c6ed2efce4ad3c799b2d2358c7333d444fe31791d82",
+            "destino_gcs": "gs://veloja-ecommerce-medalhao-raw/raw/ecommerce/20261119/produtos.csv"
+        },
+        {
+            "nome": "pedidos_example.csv",
+            "nome_destino": "pedidos.csv",
+            "tamanho_bytes": 4387813,
+            "sha256": "9abdf307a923a98bd9a64ae9152550190c21bd6cc9cda2b4a280cb7432183bf6",
+            "destino_gcs": "gs://veloja-ecommerce-medalhao-raw/raw/ecommerce/20261119/pedidos.csv"
+        },
+        {
+            "nome": "itens_pedido_example.csv",
+            "nome_destino": "itens_pedido.csv",
+            "tamanho_bytes": 5591071,
+            "sha256": "66abd0964d10ac6d90e83dd4eff391d533d06d55eba9e4b661d059c613883890",
+            "destino_gcs": "gs://veloja-ecommerce-medalhao-raw/raw/ecommerce/20261119/itens_pedido.csv"
+        },
+        {
+            "nome": "pagamentos_example.csv",
+            "nome_destino": "pagamentos.csv",
+            "tamanho_bytes": 4155436,
+            "sha256": "80aa639f4d1574846526e36751e15b04338caf36e1f4e7e4db47715b5800ca95",
+            "destino_gcs": "gs://veloja-ecommerce-medalhao-raw/raw/ecommerce/20261119/pagamentos.csv"
+        },
+        {
+            "nome": "eventos_marketing_example.csv",
+            "nome_destino": "eventos_marketing.csv",
+            "tamanho_bytes": 6080512,
+            "sha256": "5d62797d502edae4a24ed9f34c8597312e3781be7dae4898ecb42c6cfad690e7",
+            "destino_gcs": "gs://veloja-ecommerce-medalhao-raw/raw/ecommerce/20261119/eventos_marketing.csv"
+        },
+        {
+            "nome": "metas_orcamento_2025_example.csv",
+            "nome_destino": "metas_orcamento_2025.csv",
+            "tamanho_bytes": 1444,
+            "sha256": "b7d8e6aeff002fd918f424be47684b961d061b09f8379963e7b0719055c4374e",
+            "destino_gcs": "gs://veloja-ecommerce-medalhao-raw/raw/ecommerce/20261119/metas_orcamento_2025.csv"
+        }
+    ]
+}
