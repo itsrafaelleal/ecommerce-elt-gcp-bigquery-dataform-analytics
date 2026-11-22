@@ -1,0 +1,87 @@
+config {
+  type: "table",
+  schema: "trusted",
+  name: "pagamentos",
+  description: "Transações de pagamento padronizadas, tipadas e deduplicadas",
+  tags: ["trusted"],
+  assertions: {
+    uniqueKey: ["payment_id"],
+    nonNull: ["payment_id", "order_id", "metodo_pagamento", "status_pagamento", "valor_pago"]
+  }
+}
+
+WITH limpeza_padronizacao AS (
+  SELECT
+    TRIM(payment_id) AS payment_id,
+    TRIM(order_id) AS order_id,
+    TRIM(data_pagamento) AS data_pagamento,
+    CASE 
+      WHEN metodo_pagamento IS NULL OR TRIM(metodo_pagamento) = '' THEN 'nao_informado'
+      WHEN UPPER(TRIM(metodo_pagamento)) IN ('CARTAO', 'CARTAO_CREDITO') THEN 'cartao_credito'
+      WHEN UPPER(TRIM(metodo_pagamento)) = 'PIX' THEN 'pix'
+      WHEN LOWER(TRIM(metodo_pagamento)) = 'boleto' THEN 'boleto'
+      WHEN LOWER(TRIM(metodo_pagamento)) = 'wallet' THEN 'wallet'
+      ELSE LOWER(TRIM(metodo_pagamento))
+    END AS metodo_pagamento,
+    CASE 
+      WHEN status_pagamento IS NULL OR TRIM(status_pagamento) = '' OR UPPER(TRIM(status_pagamento)) = 'NULL' THEN 'nao_informado'
+      ELSE LOWER(TRIM(status_pagamento))
+    END AS status_pagamento,
+    REGEXP_REPLACE(REPLACE(TRIM(valor_pago), '\u00A0', ''), r'[^0-9,.]', '') AS valor_pago,
+    TRIM(parcelas) AS parcelas,
+    CASE 
+      WHEN adquirente IS NULL OR TRIM(adquirente) = '' OR UPPER(TRIM(adquirente)) = 'NULL' THEN 'nao_informado'
+      ELSE TRIM(adquirente)
+    END AS adquirente,
+    CASE 
+      WHEN codigo_autorizacao IS NULL OR TRIM(codigo_autorizacao) = '' OR UPPER(TRIM(codigo_autorizacao)) = 'NULL' THEN NULL
+      ELSE UPPER(TRIM(codigo_autorizacao))
+    END AS codigo_autorizacao,
+    CURRENT_TIMESTAMP() AS data_processamento
+  FROM ${ref("raw", "pagamentos")}
+),
+
+tipificacao AS (
+  SELECT
+    payment_id,
+    order_id,
+    COALESCE(
+      SAFE.PARSE_TIMESTAMP('%Y-%m-%d %H:%M:%S', data_pagamento),
+      SAFE.PARSE_TIMESTAMP('%d/%m/%Y %H:%M', data_pagamento),
+      SAFE.PARSE_TIMESTAMP('%Y/%m/%d %H:%M', data_pagamento),
+      SAFE.PARSE_TIMESTAMP('%Y-%m-%dT%H:%M:%S', data_pagamento),
+      SAFE.PARSE_TIMESTAMP('%Y-%m-%d', data_pagamento)
+    ) AS data_pagamento,
+    metodo_pagamento,
+    status_pagamento,
+    SAFE_CAST(REPLACE(valor_pago, ',', '.') AS NUMERIC) AS valor_pago,
+    SAFE_CAST(parcelas AS INT64) AS parcelas,
+    adquirente,
+    codigo_autorizacao,
+    data_processamento
+  FROM limpeza_padronizacao
+),
+
+deduplicacao AS (
+  SELECT
+    *,
+    ROW_NUMBER() OVER (
+      PARTITION BY payment_id
+      ORDER BY data_pagamento DESC NULLS LAST
+    ) AS rnk
+  FROM tipificacao
+)
+
+SELECT
+  payment_id,
+  order_id,
+  data_pagamento,
+  metodo_pagamento,
+  status_pagamento,
+  valor_pago,
+  parcelas,
+  adquirente,
+  codigo_autorizacao,
+  data_processamento
+FROM deduplicacao
+WHERE rnk = 1

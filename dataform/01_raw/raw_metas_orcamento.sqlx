@@ -1,0 +1,7 @@
+config {
+  type: "declaration",
+  database: "veloja-ecommerce-medalhao",
+  schema: "raw",
+  name: "metas_orcamento",
+  description: "Tabela externa RAW de metas mensais do orçamento Top-Down (CSV no Google Cloud Storage)"
+}

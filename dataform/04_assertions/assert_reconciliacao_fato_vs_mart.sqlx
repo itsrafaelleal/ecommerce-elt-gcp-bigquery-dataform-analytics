@@ -1,0 +1,16 @@
+config {
+  type: "assertion",
+  name: "assert_reconciliacao_fato_vs_mart",
+  description: "Falha se a soma da receita líquida no mart_vendas_diarias divergir da soma dos pedidos válidos em fact_pedidos",
+  tags: ["data_quality", "reconciliacao"]
+}
+
+-- No Dataform, uma assertion PASSA se a query retornar 0 linhas.
+-- Se houver diferença maior que R$ 0,01, esta query retorna 1 linha e o teste FALHA.
+SELECT
+  (SELECT SUM(receita_liquida) FROM ${ref("refined", "mart_vendas_diarias")}) AS receita_mart,
+  (SELECT SUM(valor_receita_liquida) FROM ${ref("refined", "fact_pedidos")} WHERE flag_pedido_valido = TRUE) AS receita_fato
+WHERE ABS(
+  (SELECT SUM(receita_liquida) FROM ${ref("refined", "mart_vendas_diarias")}) -
+  (SELECT SUM(valor_receita_liquida) FROM ${ref("refined", "fact_pedidos")} WHERE flag_pedido_valido = TRUE)
+) > 0.01

@@ -1,0 +1,71 @@
+config {
+  type: "table",
+  schema: "refined",
+  name: "fact_itens_pedido",
+  description: "Fato granular no nível de item vendido, calculando receita líquida, custo, margem de contribuição e flag de item válido",
+  tags: ["refined", "fato"],
+  assertions: {
+    uniqueKey: ["order_item_id"],
+    nonNull: ["order_item_id", "order_id", "product_id", "receita_item", "margem_item", "flag_item_valido"],
+    rowConditions: [
+      "ABS(margem_item - (receita_item - custo_item)) <= 0.01",
+      "NOT (flag_item_valido = TRUE AND (quantidade <= 0 OR preco_unitario <= 0))"
+    ]
+  }
+}
+
+WITH itens AS (
+  SELECT
+    order_item_id,
+    order_id,
+    product_id,
+    quantidade,
+    preco_unitario,
+    desconto_item,
+    status_item
+  FROM ${ref("trusted", "itens_pedido")}
+),
+
+pedidos AS (
+  SELECT
+    order_id,
+    customer_id,
+    data_pedido,
+    status_pedido
+  FROM ${ref("trusted", "pedidos")}
+),
+
+produtos AS (
+  SELECT
+    product_id,
+    custo_unitario
+  FROM ${ref("trusted", "produtos")}
+),
+
+itens_enriquecidos AS (
+  SELECT
+    i.order_item_id,
+    i.order_id,
+    p.customer_id,
+    i.product_id,
+    p.data_pedido,
+    i.quantidade,
+    i.preco_unitario,
+    i.desconto_item,
+    (i.quantidade * i.preco_unitario) - i.desconto_item AS receita_item,
+    i.quantidade * COALESCE(pr.custo_unitario, 0) AS custo_item,
+    ((i.quantidade * i.preco_unitario) - i.desconto_item) - (i.quantidade * COALESCE(pr.custo_unitario, 0)) AS margem_item,
+    CASE
+      WHEN i.quantidade > 0 AND i.status_item NOT IN ('cancelado', 'devolvido') THEN TRUE
+      ELSE FALSE
+    END AS flag_item_valido,
+    CURRENT_TIMESTAMP() AS data_processamento
+  FROM itens i
+  LEFT JOIN pedidos p
+    ON i.order_id = p.order_id
+  LEFT JOIN produtos pr
+    ON i.product_id = pr.product_id
+)
+
+SELECT *
+FROM itens_enriquecidos

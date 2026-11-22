@@ -1,0 +1,7 @@
+config {
+  type: "declaration",
+  database: "veloja-ecommerce-medalhao",
+  schema: "raw",
+  name: "itens_pedido",
+  description: "Tabela externa RAW de itens de pedido (CSV no Google Cloud Storage)"
+}

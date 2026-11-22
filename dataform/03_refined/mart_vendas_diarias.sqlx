@@ -1,0 +1,47 @@
+config {
+  type: "table",
+  schema: "refined",
+  name: "mart_vendas_diarias",
+  description: "Tabela analítica diária para alimentação de dashboards de faturamento",
+  tags: ["refined", "mart"],
+  assertions: {
+    uniqueKey: ["data_pedido"],
+    nonNull: ["data_pedido", "pedidos", "receita_liquida", "ticket_medio"],
+    rowConditions: [
+      "ABS(ticket_medio - ROUND(SAFE_DIVIDE(receita_liquida, pedidos), 2)) <= 0.02"
+    ]
+  }
+}
+
+WITH pedidos_diarios AS (
+  SELECT
+    data_pedido_date AS data_pedido,
+    COUNT(DISTINCT order_id) AS pedidos,
+    COUNT(DISTINCT customer_id) AS clientes_unicos,
+    CAST(ROUND(SUM(valor_receita_liquida), 2) AS NUMERIC) AS receita_liquida
+  FROM ${ref("refined", "fact_pedidos")}
+  WHERE flag_pedido_valido = TRUE
+  GROUP BY data_pedido_date
+),
+
+itens_diarios AS (
+  SELECT
+    DATE(data_pedido) AS data_pedido,
+    SUM(quantidade) AS itens_vendidos
+  FROM ${ref("refined", "fact_itens_pedido")}
+  WHERE flag_item_valido = TRUE
+  GROUP BY DATE(data_pedido)
+)
+
+SELECT
+  p.data_pedido,
+  p.pedidos,
+  p.clientes_unicos,
+  p.receita_liquida,
+  CAST(ROUND(SAFE_DIVIDE(p.receita_liquida, p.pedidos), 2) AS NUMERIC) AS ticket_medio,
+  COALESCE(i.itens_vendidos, 0) AS itens_vendidos,
+  CURRENT_TIMESTAMP() AS data_processamento
+FROM pedidos_diarios p
+LEFT JOIN itens_diarios i
+  ON p.data_pedido = i.data_pedido
+ORDER BY p.data_pedido

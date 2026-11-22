@@ -1,0 +1,14 @@
+config {
+  type: "assertion",
+  name: "assert_reconciliacao_meta_diaria_vs_mensal",
+  description: "Falha se a soma das metas diárias em dim_metas divergir da soma do orçamento anual em trusted.metas_orcamento",
+  tags: ["data_quality", "reconciliacao", "metas"]
+}
+
+SELECT
+  (SELECT SUM(meta_diaria_receita) FROM ${ref("refined", "dim_metas")}) AS soma_metas_diarias,
+  (SELECT SUM(meta_receita_liquida) FROM ${ref("trusted", "metas_orcamento")}) AS soma_orcamento_mensal
+WHERE ABS(
+  (SELECT SUM(meta_diaria_receita) FROM ${ref("refined", "dim_metas")}) -
+  (SELECT SUM(meta_receita_liquida) FROM ${ref("trusted", "metas_orcamento")})
+) > 1.00
