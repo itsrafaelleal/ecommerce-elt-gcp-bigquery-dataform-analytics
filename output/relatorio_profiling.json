@@ -1,0 +1,67 @@
+{
+  "clientes_example.csv": {
+    "linhas": 21000,
+    "colunas": 13,
+    "vazios_por_coluna": {
+      "data_cadastro": 1050,
+      "canal_aquisicao": 1221
+    },
+    "chave_primaria": "customer_id",
+    "chaves_duplicadas": 1000
+  },
+  "produtos_example.csv": {
+    "linhas": 500,
+    "colunas": 11,
+    "vazios_por_coluna": {},
+    "chave_primaria": "product_id",
+    "chaves_duplicadas": 0
+  },
+  "pedidos_example.csv": {
+    "linhas": 51534,
+    "colunas": 10,
+    "vazios_por_coluna": {
+      "status_pedido": 827,
+      "origem_pedido": 1016,
+      "cupom": 19743,
+      "observacao": 35066
+    },
+    "chave_primaria": "order_id",
+    "chaves_duplicadas": 1534
+  },
+  "itens_pedido_example.csv": {
+    "linhas": 124794,
+    "colunas": 7,
+    "vazios_por_coluna": {
+      "status_item": 4377
+    },
+    "chave_primaria": "order_item_id",
+    "chaves_duplicadas": 0
+  },
+  "pagamentos_example.csv": {
+    "linhas": 50000,
+    "colunas": 9,
+    "vazios_por_coluna": {
+      "status_pagamento": 679,
+      "adquirente": 4049
+    },
+    "chave_primaria": "payment_id",
+    "chaves_duplicadas": 0
+  },
+  "eventos_marketing_example.csv": {
+    "linhas": 75000,
+    "colunas": 8,
+    "vazios_por_coluna": {
+      "canal": 2180,
+      "tipo_evento": 8964
+    },
+    "chave_primaria": "event_id",
+    "chaves_duplicadas": 0
+  },
+  "metas_orcamento_2025_example.csv": {
+    "linhas": 12,
+    "colunas": 11,
+    "vazios_por_coluna": {},
+    "chave_primaria": "meta_id",
+    "chaves_duplicadas": 0
+  }
+}
