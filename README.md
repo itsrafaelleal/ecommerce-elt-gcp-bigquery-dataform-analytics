@@ -11,13 +11,13 @@
 
 Pipeline corporativo de Engenharia de Dados e Analytics de ponta a ponta para a operação de e-commerce da **Veloja** na Google Cloud Platform. O repositório processa **7 fontes de dados transacionais, de mídia e de planejamento orçamentário** (clientes, produtos, pedidos, itens, pagamentos, eventos de marketing e metas de orçamento, totalizando mais de **322 mil registros** do ano fiscal de 2025) e as estrutura em uma **Arquitetura Medalhão (RAW $\rightarrow$ Trusted $\rightarrow$ Refined)** modelada em **Star Schema e Data Marts** para análise executiva de faturamento, margem de contribuição, atribuição de mídia e **metas vs. realizado**.
 
-O pipeline executa **profiling automatizado e ingestão em Python** para o **Google Cloud Storage** (com geração de manifesto criptográfico SHA-256), mapeia os arquivos no **BigQuery** como *External Tables* na camada **RAW**, higieniza, tipa e deduplica os registros em GoogleSQL na camada **Trusted**, modela a camada **Refined** em **dimensões, fatos e marts**, orquestra a linhagem e dependências via **Google Cloud Dataform (`.sqlx`)**, audita a integridade com uma **suíte de 18 testes automatizados de qualidade de dados** e abastece um **cockpit executivo em Streamlit + Apache ECharts** com rastreamento de metas e semáforo RAG de 4 níveis.
+O pipeline executa **profiling automatizado e ingestão em Python** para o **Google Cloud Storage** (com geração de manifesto criptográfico SHA-256), mapeia os arquivos no **BigQuery** como *External Tables* na camada **RAW**, higieniza, tipa e deduplica os registros em GoogleSQL na camada **Trusted**, modela a camada **Refined** em **dimensões, fatos e marts**, orquestra a linhagem e dependências via **Google Cloud Dataform (`.sqlx`)**, audita a integridade com uma **suíte de 18 testes automatizados de qualidade de dados** e abastece um **dashboard em Streamlit + Apache ECharts** com rastreamento de metas e semáforo RAG de 4 níveis.
 
 > **Documentação Técnica Oficial:**
 >
 > * [catalogo_dados.md](catalogo_dados.md) — **Catálogo e Dicionário Oficial de Dados**: glossário executivo de negócio, contratos e esquemas das 3 camadas, regras matemáticas, matriz de linhagem e especificação analítica de BI.
 > * [dataform/README.md](dataform/README.md) — **Orquestração e DAG no Dataform**: estrutura `.sqlx`, árvore de dependências `${ref(...)}`, *assertions* embutidas e política de agendamento comercial (`0 6-20 * * *`).
-> * [dashboard/README.md](dashboard/README.md) — **Cockpit Executivo Veloja Analytics**: arquitetura da aplicação Streamlit + Apache ECharts, governança de cache e instruções de deploy.
+> * [dashboard/README.md](dashboard/README.md) — **Dashboard Veloja Analytics**: arquitetura da aplicação Streamlit + Apache ECharts, governança de cache e instruções de deploy.
 
 ---
 
@@ -32,7 +32,7 @@ O pipeline executa **profiling automatizado e ingestão em Python** para o **Goo
 * **Ausência de preenchimento:** campos de status, canal, valor pago e dispositivo ausentes em parte dos eventos brutos.
 * **Desdobramento de Metas Top-Down:** necessidade de confrontar o orçamento mensal corporativo (FP&A) com a execução diária ponderada pela sazonalidade semanal.
 
-**Solução Arquitetural:**
+**Solução:**
 
 * Diagnóstico pré-ingestão (*data profiling*) e registro criptográfico de integridade de cada lote enviado ao Data Lake (manifesto JSON com hash SHA-256).
 * Preservação imutável do dado bruto no **GCS** e exposição direta no BigQuery via *External Tables* na camada **RAW** (100% `STRING`, zero perda na ingestão).
@@ -43,6 +43,18 @@ O pipeline executa **profiling automatizado e ingestão em Python** para o **Goo
 ---
 
 ## Arquitetura Medalhão e Fluxo de Dados
+
+O dado percorre quatro estágios, cada um com uma responsabilidade única: **RAW (Bronze)** preserva o bruto, **Trusted (Silver)** higieniza e tipa, **Refined (Gold)** modela em Star Schema e Marts, e o **Dashboard** entrega a leitura de negócio. A visão macro abaixo resume os serviços da GCP envolvidos em cada estágio:
+
+<p align="center">
+  <img src="asset/fluxo-ecommerce-elt-gcp-bigquery.jpg" alt="Diagrama da arquitetura medalhão do Veloja Data Pipeline: ingestão de 7 arquivos CSV em Python para o Google Cloud Storage, camada RAW com External Tables no BigQuery, camada Trusted com limpeza e tipagem via Dataform, camada Refined em Star Schema com 18 assertions de qualidade e dashboard em Streamlit + Apache ECharts" width="100%">
+</p>
+
+<p align="center">
+  <sub><b>Figura 1</b> — Fluxo end-to-end do pipeline: Landing Zone (GCS) → RAW → Trusted → Refined → Dashboard, orquestrado pelo Google Cloud Dataform na região <code>southamerica-east1</code>.</sub>
+</p>
+
+O detalhamento dos caminhos, artefatos e scripts de cada estágio:
 
 ```text
 Fontes CSV (data/raw/*_example.csv)
@@ -64,7 +76,7 @@ Fontes CSV (data/raw/*_example.csv)
   │  sql/04_data_quality/test.sql & dataform/04_assertions/ (Data Quality) │
   └────────────────────────────────────┬───────────────────────────────────┘
                                        │
-  Cockpit Executivo — Streamlit + Apache ECharts (cache de 1h, filtros em memória)
+  Dashboard — Streamlit + Apache ECharts (cache de 1h, filtros em memória)
 ```
 
 ### 1. Profiling e Ingestão no GCS (`upload_csv/`)
@@ -107,7 +119,7 @@ As regras corporativas abaixo são calculadas diretamente no BigQuery e document
 | **Margem de contribuição** | `receita_liquida_item − (quantidade × custo_unitario)`. |
 | **Atribuição de marketing (14 dias)** | Um pedido válido é atribuído à campanha quando o cliente converte em até **14 dias** após a interação (`TIMESTAMP_DIFF <= 14 dias`), contabilizando cada pedido uma única vez por par `(campanha, canal)`. |
 | **Meta diária sazonal** | O orçamento mensal de receita e pedidos é distribuído pelos dias do mês aplicando pesos de sazonalidade semanal (`1,22` terça-feira a `0,68` domingo), garantindo reconciliação exata com o total mensal. |
-| **Semáforo RAG** | Classificação automática de desempenho em `VERDE`, `AMARELO` e `VERMELHO` na camada Refined (e desdobramento visual de 4 níveis com `VERDE ESCURO` $\ge 105\%$ no cockpit executivo). |
+| **Semáforo RAG** | Classificação automática de desempenho em `VERDE`, `AMARELO` e `VERMELHO` na camada Refined (e desdobramento visual de 4 níveis com `VERDE ESCURO` $\ge 105\%$ no dashboard). |
 
 ---
 
@@ -180,9 +192,15 @@ O script [`sql/04_data_quality/test.sql`](sql/04_data_quality/test.sql) executa 
 
 ---
 
-## Cockpit Executivo (Streamlit + Apache ECharts)
+## Dashboard (Streamlit + Apache ECharts)
 
-A aplicação web em [`dashboard/`](dashboard/) consome diretamente a camada **Refined** no BigQuery com arquitetura voltada a alta performance e eficiência de custos:
+A aplicação web em [`dashboard/`](dashboard/) consome diretamente a camada **Refined** no BigQuery.
+
+> **Nota sobre a construção desta camada.** Streamlit é a ferramenta que eu já venho usando para publicar meus projetos, e a parte de estrutura da aplicação (conexão, cache, filtros, organização em abas) partiu dessa base. O que nunca me agradou foram os componentes nativos de gráfico (`st.line_chart`, `st.bar_chart`): eles resolvem a exploração rápida, mas não dão o controle que um painel de acompanhamento de metas exige — posicionar linha de meta sobre a série, colorir a barra conforme a faixa de atingimento, combinar eixos de grandezas diferentes no mesmo gráfico. Trocar a renderização por **Apache ECharts** (via `streamlit-echarts`) resolveu isso e mudou completamente o resultado visual, com um custo: cada gráfico passa a ser um dicionário `options` extenso, de API própria e pouco documentada no ecossistema Python.
+>
+> Para essa parte específica — a customização das opções do ECharts em [`dashboard/src/charts.py`](dashboard/src/charts.py) — usei o **Kiro CLI (AWS) com o modelo Claude Opus 5** como par de programação, em vez de me aprofundar na documentação de configuração da biblioteca; a IA entrou para fazer esse front e aderir a sintaxe do ECharts.
+
+A arquitetura da aplicação prioriza performance de resposta e eficiência de custo no BigQuery:
 
 * **Cache de 1 hora** (`@st.cache_data(ttl=3600)`): proteção contra leituras repetitivas no BigQuery.
 * **Projeção Estrita de Colunas:** consultas SQL otimizadas sem uso de `SELECT *`.
@@ -222,6 +240,9 @@ ecommerce-elt-gcp-bigquery-dataform-analytics/
 ├── README.md                       # Documentação geral da arquitetura e guia de execução
 ├── catalogo_dados.md               # Catálogo e Dicionário Oficial de Dados (RAW, Trusted, Refined e BI)
 │
+├── asset/
+│   └── fluxo-ecommerce-elt-gcp-bigquery.jpg   # Diagrama da arquitetura medalhão (Figura 1 do README)
+│
 ├── data/
 │   └── raw/                        # Lote de arquivos CSV brutos da camada de origem (7 entidades)
 │
@@ -260,7 +281,7 @@ ecommerce-elt-gcp-bigquery-dataform-analytics/
     │   ├── __init__.py
     │   ├── data_loader.py          # Camada de conexão BigQuery com cache TTL de 1 hora
     │   └── charts.py               # Especificação dos componentes visuais em Apache ECharts
-    ├── app.py                      # Aplicação principal do Cockpit Executivo Veloja Analytics
+    ├── app.py                      # Aplicação principal do Dashboard Veloja Analytics
     ├── requirements.txt            # Dependências para deploy do dashboard
     └── README.md                   # Guia de operação e publicação do dashboard
 ```
@@ -350,7 +371,7 @@ bq query --use_legacy_sql=false < sql/04_data_quality/test.sql
 
 Todos os 18 testes devem retornar `total_erros = 0` e `status_teste = 'PASSOU'`.
 
-### 8. Iniciar o Cockpit Executivo (Streamlit)
+### 8. Iniciar o Dashboard (Streamlit)
 
 ```bash
 uv pip install -r dashboard/requirements.txt
