@@ -36,10 +36,5 @@ dashboard/data_cache/
 # Saídas geradas pelos scripts (logs)
 *.log
 
-# Lixo de SO / editor
-.DS_Store
-Thumbs.db
-*.swp
-
 # Metadados do WSL/Windows
 *:Zone.Identifier
