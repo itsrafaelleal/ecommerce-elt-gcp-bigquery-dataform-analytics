@@ -1,4 +1,4 @@
-# Veloja Analytics — Cockpit Executivo (GCP + BigQuery + Streamlit + Apache ECharts)
+# Veloja Analytics — Dashboard (GCP + BigQuery + Streamlit + Apache ECharts)
 
 Dashboard executivo de tomada de decisão para a operação de e-commerce da **Veloja**, conectado diretamente às tabelas agregadas da Camada **Refined (Gold)** no Google BigQuery.
 

@@ -29,7 +29,7 @@ from src.charts import (
 # CONFIGURAÇÃO DE PÁGINA (WIDE LAYOUT, SEM EMOJIS DECORATIVOS)
 # ==============================================================================
 st.set_page_config(
-    page_title="Veloja Analytics | Cockpit Executivo & Metas",
+    page_title="Veloja Analytics | Dashboard & Metas",
     layout="wide",
     initial_sidebar_state="expanded"
 )
