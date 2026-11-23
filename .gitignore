@@ -38,3 +38,6 @@ dashboard/data_cache/
 
 # Metadados do WSL/Windows
 *:Zone.Identifier
+
+#data dashboard
+workspace/ecommerce-elt-gcp-bigquery-dataform-analytics/dashboard/data_cache
