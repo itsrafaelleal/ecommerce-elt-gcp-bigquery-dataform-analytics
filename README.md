@@ -119,7 +119,7 @@ As regras corporativas abaixo são calculadas diretamente no BigQuery e document
 | **Margem de contribuição** | `receita_liquida_item − (quantidade × custo_unitario)`. |
 | **Atribuição de marketing (14 dias)** | Um pedido válido é atribuído à campanha quando o cliente converte em até **14 dias** após a interação (`TIMESTAMP_DIFF <= 14 dias`), contabilizando cada pedido uma única vez por par `(campanha, canal)`. |
 | **Meta diária sazonal** | O orçamento mensal de receita e pedidos é distribuído pelos dias do mês aplicando pesos de sazonalidade semanal (`1,22` terça-feira a `0,68` domingo), garantindo reconciliação exata com o total mensal. |
-| **Semáforo RAG** | Classificação automática de desempenho em `VERDE`, `AMARELO` e `VERMELHO` na camada Refined (e desdobramento visual de 4 níveis com `VERDE ESCURO` $\ge 105\%$ no dashboard). |
+| **Semáforo RAG** | Classificação automática do atingimento em `VERDE_ESCURO` ($\ge 100\%$), `VERDE_CLARO` ($95\%$ a $99,9\%$), `AMARELO` ($80\%$ a $94,9\%$) e `VERMELHO` ($< 80\%$), calculada na camada Refined (`mart_metas_vs_realizado`) e reaproveitada pelo dashboard. |
 
 ---
 
@@ -205,7 +205,7 @@ A arquitetura da aplicação prioriza performance de resposta e eficiência de c
 * **Cache de 1 hora** (`@st.cache_data(ttl=3600)`): proteção contra leituras repetitivas no BigQuery.
 * **Projeção Estrita de Colunas:** consultas SQL otimizadas sem uso de `SELECT *`.
 * **Filtros Globais em Memória:** filtragem instantânea por período, mês e canal de origem via Pandas, com **reponderação proporcional da meta pelo *share* de receita do canal selecionado**.
-* **Semáforo Executivo de 4 Níveis:** cartões de KPI e gráficos com linhas marcadoras de meta (`markLine`) classificando o atingimento em **Verde Escuro** ($\ge 105\%$), **Verde Claro** ($100\%$ a $104,9\%$), **Amarelo** ($95\%$ a $99,9\%$) e **Vermelho** ($< 95\%$).
+* **Semáforo Executivo de 4 Níveis:** cartões de KPI e gráficos com linhas marcadoras de meta (`markLine`) classificando o atingimento em **Verde Escuro** ($\ge 100\%$), **Verde Claro** ($95\%$ a $99,9\%$), **Amarelo** ($80\%$ a $94,9\%$) e **Vermelho** ($< 80\%$). Indicadores de teto, como o percentual de desconto médio, usam a escala invertida (`get_rag_color(invertido=True)`), em que ficar **abaixo** do limite é o resultado bom.
 * **4 Visões Analíticas Integradas:**
   1. **Visão Executiva de Vendas:** Receita Líquida, Pedidos Faturados, Ticket Médio (AOV), Itens Expedidos, evolução diária vs. meta e participação por canal.
   2. **Produtos & Rentabilidade:** Margem de Contribuição (R$ e %), Desconto Médio vs. Teto, Mix de Categorias, ranking Top 10 produtos e matriz de rentabilidade.

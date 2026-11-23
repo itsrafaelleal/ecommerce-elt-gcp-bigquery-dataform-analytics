@@ -531,6 +531,18 @@ flowchart TD
 
 Esta seção mapeia os cartões de KPI, gráficos e visuais que alimentam os relatórios gerenciais da Veloja, conectando-os diretamente às tabelas e colunas da **Camada Refined (Gold)**.
 
+> **Escopo deste capítulo.** A Parte 4 é a **especificação analítica** da camada de BI: ela descreve o painel-alvo, e não apenas o que já está publicado. O dashboard em [`dashboard/app.py`](dashboard/app.py) implementa hoje **4 abas das 6 especificadas**. A tabela abaixo é o mapa de rastreabilidade entre especificação e implementação, para que a leitura deste documento não seja confundida com o estado atual da aplicação.
+
+| Especificação | Aba correspondente no `app.py` | Situação |
+| :------------ | :----------------------------- | :------- |
+| **4.1** Visão Executiva de Vendas & Faturamento | *1. Visão Executiva & Metas de Receita* | **Implementada.** O KPI 1.4 (Desconto Médio) foi realocado para a Aba 2, junto da meta de teto de desconto. |
+| **4.2** Performance de Produtos, Categorias & Margens | *2. Produtos, Margem & Teto de Desconto* | **Implementada.** |
+| **4.3** Comportamento de Clientes, LTV & Recorrência | — | **Roadmap.** Depende de carregar `dim_clientes` no dashboard, que hoje não é consumida por nenhum loader. |
+| **4.4** Gestão Financeira, Pagamentos & Adquirentes | parcialmente, dentro da Aba 1 | **Parcial.** O gráfico de meios de pagamento está na Aba 1; os KPIs de taxa de aprovação e de transações recusadas são roadmap. |
+| **4.5** Atribuição de Marketing & Retorno de Campanhas | *3. Campanhas & Meta de ROAS* | **Implementada.** O KPI 5.2 (CPA) é roadmap; a aba exibe pedidos convertidos por mídia no lugar. |
+| **4.6** Detalhamento Operacional & Auditoria de Integridade | — | **Roadmap no dashboard.** A auditoria já existe fora dele: 18 testes em [`sql/04_data_quality/test.sql`](sql/04_data_quality/test.sql) e as assertions do Dataform. |
+| **4.7** Catálogo de Dados & Guia dos Gráficos | *4. Catálogo de Dados & Guia dos Gráficos* | **Implementada.** Nasceu na aplicação e foi especificada depois. |
+
 ---
 
 ## 4.0 Filtros Globais do Painel (Top Bar)
@@ -538,20 +550,24 @@ Esta seção mapeia os cartões de KPI, gráficos e visuais que alimentam os rel
 Filtros interativos presentes no topo de todas as abas analíticas:
 
 
-| Filtro Visual                 | Tabela de Origem Refined               | Coluna da Refined  | Tipo de Controle                              |
-| :------------------------------ | :--------------------------------------- | :------------------- | :---------------------------------------------- |
-| **Período (Data do Pedido)** | `mart_vendas_diarias` / `fact_pedidos` | `data_pedido_date` | Seletor de Intervalo de Datas                 |
-| **Categoria de Produto**      | `dim_produtos`                         | `categoria`        | Dropdown de Seleção                         |
-| **Canal de Venda (Origem)**   | `fact_pedidos`                         | `origem_pedido`    | Botões de Alternância (`site`, `app`, etc.) |
-| **Status do Pedido**          | `fact_pedidos`                         | `status_pedido`    | Multi-select                                  |
-| **Estado de Entrega (UF)**    | `dim_clientes` / `trusted.pedidos`     | `estado_entrega`   | Seletor de Mapa / Lista de UFs                |
-| **Campanha de Marketing**     | `mart_performance_campanhas`           | `campanha`         | Dropdown de Seleção                         |
+| Filtro Visual                 | Tabela de Origem Refined               | Coluna da Refined  | Tipo de Controle                              | Situação |
+| :------------------------------ | :--------------------------------------- | :------------------- | :---------------------------------------------- | :------- |
+| **Período (Data do Pedido)** | `mart_vendas_diarias` / `fact_pedidos` | `data_pedido_date` | Seletor de Intervalo de Datas                 | Implementado (`st.date_input`) |
+| **Mês de Referência**         | `mart_metas_vs_realizado`              | `ano_mes`          | Dropdown de Seleção                         | Implementado (`st.selectbox`) |
+| **Canal de Venda (Origem)**   | `fact_pedidos`                         | `origem_pedido`    | Dropdown de Seleção                         | Implementado, com reponderação da meta pelo *share* do canal |
+| **Categoria de Produto**      | `dim_produtos`                         | `categoria`        | Dropdown de Seleção                         | Roadmap |
+| **Status do Pedido**          | `fact_pedidos`                         | `status_pedido`    | Multi-select                                  | Roadmap |
+| **Estado de Entrega (UF)**    | `dim_clientes` / `trusted.pedidos`     | `estado_entrega`   | Seletor de Mapa / Lista de UFs                | Roadmap |
+| **Campanha de Marketing**     | `mart_performance_campanhas`           | `campanha`         | Dropdown de Seleção                         | Roadmap |
+
+Os três filtros implementados atuam **em memória**, sobre os DataFrames já carregados do BigQuery, sem disparar nova consulta. O filtro de canal é o único que altera a meta: ele reponderá o orçamento diário pela participação histórica do canal na receita e no volume de pedidos, de modo que realizado e meta permaneçam comparáveis.
 
 ---
 
-## 4.1 Aba 1: Cockpit Executivo de Vendas & Faturamento
+## 4.1 Aba 1: Visão Executiva de Vendas & Faturamento
 
 * **Objetivo de Negócio:** Visão consolidada da saúde financeira da Veloja para C-Level (Diretoria e Gerência Comercial).
+* **Situação:** Implementada como aba *1. Visão Executiva & Metas de Receita*. O KPI 1.4 (Desconto Médio) migrou para a Aba 2, onde fica ao lado da meta de teto de desconto.
 
 ### A. Cartões de Indicadores (KPIs)
 
@@ -599,6 +615,7 @@ Filtros interativos presentes no topo de todas as abas analíticas:
 ## 4.2 Aba 2: Performance de Produtos, Categorias & Margens
 
 * **Objetivo de Negócio:** Analisar a lucratividade do sortimento de produtos, categorias líderes e margem de contribuição.
+* **Situação:** Implementada como aba *2. Produtos, Margem & Teto de Desconto*, acrescida do KPI de desconto médio e da linha marcadora de teto.
 
 ### A. Cartões de Indicadores (KPIs)
 
@@ -632,6 +649,7 @@ Filtros interativos presentes no topo de todas as abas analíticas:
 ## 4.3 Aba 3: Comportamento de Clientes, LTV & Recorrência
 
 * **Objetivo de Negócio:** Avaliar o ciclo de vida do cliente (CRM), retenção, recompra e valor vitalício.
+* **Situação:** **Roadmap.** Não há aba correspondente no dashboard. A `dim_clientes` existe na camada Refined e está documentada na Parte 3, mas nenhum loader de [`dashboard/src/data_loader.py`](dashboard/src/data_loader.py) a consome ainda — é a primeira dependência a resolver para esta aba sair do papel.
 
 ### A. Cartões de Indicadores (KPIs)
 
@@ -664,6 +682,7 @@ Filtros interativos presentes no topo de todas as abas analíticas:
 ## 4.4 Aba 4: Gestão Financeira, Pagamentos & Adquirentes
 
 * **Objetivo de Negócio:** Monitorar a conversão dos gateways de pagamento, riscos de chargeback e distribuição de parcelas.
+* **Situação:** **Parcial.** O gráfico de composição por meio de pagamento já está publicado, porém dentro da Aba 1, alimentado por `load_pagamentos_resumo()`. Os KPIs de taxa de aprovação, transações recusadas, chargeback e perfil de parcelamento permanecem como roadmap, assim como a aba dedicada.
 
 ### A. Cartões de Indicadores (KPIs)
 
@@ -696,6 +715,7 @@ Filtros interativos presentes no topo de todas as abas analíticas:
 ## 4.5 Aba 5: Atribuição de Marketing & Retorno de Campanhas
 
 * **Objetivo de Negócio:** Apurar a eficácia de cada canal de tráfego e campanha na geração de pedidos reais na janela de atribuição de 14 dias.
+* **Situação:** Implementada como aba *3. Campanhas & Meta de ROAS*. O KPI 5.2 (CPA) é roadmap; no lugar dele a aba exibe o volume de pedidos convertidos por mídia.
 
 ### A. Cartões de Indicadores (KPIs)
 
@@ -729,6 +749,7 @@ Filtros interativos presentes no topo de todas as abas analíticas:
 ## 4.6 Aba 6: Detalhamento Operacional & Auditoria de Integridade
 
 * **Objetivo de Negócio:** Painel de controle de qualidade de dados para Engenheiros e Analistas de Dados realizarem conferências e auditorias contábeis.
+* **Situação:** **Roadmap no dashboard**, mas a função já está coberta fora dele: os 18 testes de [`sql/04_data_quality/test.sql`](sql/04_data_quality/test.sql) e as assertions declaradas em [`dataform/04_assertions/`](dataform/04_assertions/) executam estas validações no próprio BigQuery, em vez de delegá-las à camada visual.
 
 ### Grade de Auditoria e Validações Analíticas:
 
@@ -741,3 +762,21 @@ Filtros interativos presentes no topo de todas as abas analíticas:
 | **AUD-04** | Itens com Produtos Inexistentes                    | `trusted.itens_pedido` e `trusted.produtos` | `itens_pedido.product_id NOT IN (SELECT product_id FROM produtos)`.               |
 | **AUD-05** | Pedidos Cancelados com Pagamento Aprovado          | `trusted.pedidos` e `trusted.pagamentos`    | Pedidos com `status_pedido = 'cancelado'` que possuem transação `'aprovado'`.   |
 | **AUD-06** | Anomalias de Itens (Qtd <= 0 ou Desconto > Preço) | `trusted.itens_pedido`                      | `quantidade <= 0 OR desconto_item > preco_unitario`.                              |
+
+---
+
+## 4.7 Aba 7: Catálogo de Dados & Guia dos Gráficos
+
+* **Objetivo de Negócio:** Tornar o painel autoexplicativo para quem não participou da sua construção, dispensando treinamento prévio ou consulta a documento externo para interpretar os números.
+* **Situação:** Implementada como aba *4. Catálogo de Dados & Guia dos Gráficos*. Diferente das demais, nasceu na aplicação e está sendo especificada aqui depois do fato.
+
+### Conteúdo publicado na interface:
+
+| Bloco | O que documenta |
+| :---- | :-------------- |
+| **Metodologia de Metas** | Por que a meta mensal varia ao longo do ano (calendário do varejo: Carnaval em fevereiro, Dia das Mães em maio, Black Friday em novembro) e por que a meta diária varia dentro do mês (peso por dia da semana). |
+| **Leitura da Faixa Esperada** | Como interpretar o piso de $-1$ desvio-padrão no gráfico diário: acima da linha de meta, entre a faixa e a meta, ou abaixo da faixa. |
+| **Tabela do Semáforo RAG** | Os 4 níveis em duas escalas lado a lado: a direta, para indicadores de resultado, e a invertida, para o teto de desconto, com a ação gerencial sugerida em cada faixa. |
+| **Glossário de Indicadores** | Para cada KPI: fórmula de cálculo, direção desejada (quanto maior ou quanto menor, melhor) e a pergunta de negócio que ele responde. |
+
+> **Nota de governança.** O conteúdo desta aba é redação própria da aplicação, mantida em `app.py`. Os limiares do semáforo ali exibidos precisam permanecer sincronizados com `get_rag_color()` em [`dashboard/src/charts.py`](dashboard/src/charts.py) e com os `CASE WHEN` de [`sql/03_refined/08_mart_metas_vs_realizado.sql`](sql/03_refined/08_mart_metas_vs_realizado.sql), que são a fonte da verdade: `>= 100%`, `95% a 99,9%`, `80% a 94,9%` e `< 80%`.
