@@ -391,3 +391,25 @@ uv run streamlit run dashboard/app.py
 ```
 
 O aplicativo estará disponível em `http://localhost:8501`.
+
+---
+
+## Próximos Passos
+
+
+### Infraestrutura e boas práticas de projeto
+
+* [ ]  **Criar um task runner com os comandos do projeto** (`Makefile`, `just`, ou `taskipy`/`poethepoet` no `pyproject.toml`), para padronizar e documentar os comandos de `uv`, `dataform`, `gcloud` e `bq` em atalhos como `make upload` / `make dataform`.
+
+* [ ]  **Limpar dependências desnecessárias do [`pyproject.toml`](pyproject.toml)** pensando em produção: remover `pykernel` (kernel de notebook) e `pathlib` (já faz parte da biblioteca padrão do Python desde a 3.4).
+* [ ]  **Converter o notebook de upload em script**: transformar [`upload_csv/upload_to_gcs.py`](upload_csv/upload_to_gcs.py) (estilo célula `#%%`, código solto no módulo) em um script com funções e um ponto de entrada `if __name__ == "__main__": main()`, para ser testável e automatizável.
+
+### Modelagem no Dataform / BigQuery
+
+* [ ]  **Modelar as materializações** em vez de usar `type: "table"` em tudo: definir o que deve ser `view`, o que deve ser `incremental` (ex.: `fact_pedidos`, que cresce diariamente) e o que de fato precisa ser `table`.
+* [ ]  **Aplicar particionamento e clustering** nas tabelas do BigQuery (ex.: partição por `data_pedido_date`, cluster por chaves de filtro/join), reduzindo dados escaneados e custo de consulta.
+
+### Qualidade e automação
+
+* [ ]  **Adicionar CI para o Dataform** (ex.: GitHub Actions) rodando `dataform compile` e as assertions a cada push/PR.
+* [ ]  **Criar uma camada de abstração (wrapper) sobre as libs da GCP**: módulos próprios em volta de `google-cloud-storage` e `bigquery`, com tratamento de erros personalizado e configuração centralizada (project_id, bucket, credenciais), sem deixar exceções cruas da API vazarem para o executor e facilitando os testes.
