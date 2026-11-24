@@ -9,6 +9,11 @@
 ![Apache ECharts](https://img.shields.io/badge/Apache%20ECharts-Visualização-AA344D?logo=apacheecharts&logoColor=white)
 ![uv](https://img.shields.io/badge/uv-Gerenciador-DE5FE9?logo=uv&logoColor=white)
 
+### [▶ Abrir o dashboard publicado](https://rafael.meusisteminha.xyz/demos/ecommerce-bigquery/)
+
+Versão navegável do painel, sem instalar nada e sem credenciais da Google, com
+os filtros de período e de canal funcionando.
+
 Pipeline corporativo de Engenharia de Dados e Analytics de ponta a ponta para a operação de e-commerce da **Veloja** na Google Cloud Platform. O repositório processa **7 fontes de dados transacionais, de mídia e de planejamento orçamentário** (clientes, produtos, pedidos, itens, pagamentos, eventos de marketing e metas de orçamento, totalizando mais de **322 mil registros** do ano fiscal de 2025) e as estrutura em uma **Arquitetura Medalhão (RAW $\rightarrow$ Trusted $\rightarrow$ Refined)** modelada em **Star Schema e Data Marts** para análise executiva de faturamento, margem de contribuição, atribuição de mídia e **metas vs. realizado**.
 
 O pipeline executa **profiling automatizado e ingestão em Python** para o **Google Cloud Storage** (com geração de manifesto criptográfico SHA-256), mapeia os arquivos no **BigQuery** como *External Tables* na camada **RAW**, higieniza, tipa e deduplica os registros em GoogleSQL na camada **Trusted**, modela a camada **Refined** em **dimensões, fatos e marts**, orquestra a linhagem e dependências via **Google Cloud Dataform (`.sqlx`)**, audita a integridade com uma **suíte de 18 testes automatizados de qualidade de dados** e abastece um **dashboard em Streamlit + Apache ECharts** com rastreamento de metas e semáforo RAG de 4 níveis.
@@ -195,6 +200,13 @@ O script [`sql/04_data_quality/test.sql`](sql/04_data_quality/test.sql) executa 
 ## Dashboard (Streamlit + Apache ECharts)
 
 A aplicação web em [`dashboard/`](dashboard/) consome diretamente a camada **Refined** no BigQuery.
+
+[![Painel executivo da Veloja: receita líquida, pedidos válidos, ticket médio e dias acima de 95% da meta, com o faturamento mensal colorido pelo semáforo e a linha de meta mensal](https://rafael.meusisteminha.xyz/imagens/ecommerce-bigquery/dashboard-publicado.webp)](https://rafael.meusisteminha.xyz/demos/ecommerce-bigquery/)
+
+> **[Abrir o painel publicado](https://rafael.meusisteminha.xyz/demos/ecommerce-bigquery/)** — clicar na imagem acima leva ao mesmo lugar.
+>
+> É uma versão estática gerada a partir desta aplicação, e não uma captura de
+> tela: as funções do dashboard, ela foi feita assim porque eu não quis expor nenhuma porta nesse site portifolio.
 
 > **Nota sobre a construção desta camada.** Streamlit é a ferramenta que eu já venho usando para publicar meus projetos, e a parte de estrutura da aplicação (conexão, cache, filtros, organização em abas) partiu dessa base. O que nunca me agradou foram os componentes nativos de gráfico (`st.line_chart`, `st.bar_chart`): eles resolvem a exploração rápida, mas não dão o controle que um painel de acompanhamento de metas exige — posicionar linha de meta sobre a série, colorir a barra conforme a faixa de atingimento, combinar eixos de grandezas diferentes no mesmo gráfico. Trocar a renderização por **Apache ECharts** (via `streamlit-echarts`) resolveu isso e mudou completamente o resultado visual, com um custo: cada gráfico passa a ser um dicionário `options` extenso, de API própria e pouco documentada no ecossistema Python.
 >
